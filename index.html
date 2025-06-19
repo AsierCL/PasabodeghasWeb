@@ -26,11 +26,51 @@
     /* Header icons */
     .social-icons img { width: 24px; height: 24px; }
     
-    /* Hero */
-    .hero { position: relative; text-align: center; color: #fff; }
-    .hero img { width: 100%; height: auto; }
-    .hero .overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .hero {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Ajusta la altura según lo que necesites */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    }
 
+    .hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    }
+
+    .hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4); /* Oscurece la imagen para mejor legibilidad */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    }
+
+    .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    word-break: break-word;
+    }
+
+    .hero p {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+    }
     /* Responsividad para iframes */
     .embed-container {
       position: relative;
@@ -50,12 +90,51 @@
     }
 
     section { padding: 2rem 1rem; max-width: 1200px; margin: 0 auto; }
-    .section-title { margin-bottom: 1rem; font-size: 1.5rem; }
+    .section-title { margin-bottom: 1rem; font-size: 3rem; }
+
+    /* Sobre el Festival */
+    .about-section {
+    padding: 3rem 1rem;
+    background: #fff;
+    }
+
+    .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    }
+
+    .about-text {
+    flex: 1 1 350px;
+    text-align: justify;
+    }
+
+    .about-image {
+    flex: 1 1 350px;
+    display: flex;
+    justify-content: center;
+    }
+
+    .about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    }
 
     /* Servicios */
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
-    .service-item { text-align: center; }
-    .service-item img { width: 50px; height: 50px; margin-bottom: 0.5rem; }
+    .service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* opcional: para dar algo de espacio interior */
+    padding: 1rem 0;
+    }
 
     /* Programación */
     .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
@@ -76,12 +155,12 @@
   <!-- Encabezado -->
   <header>
     <div class="logo">
-      <img src="millo.png" alt="Pasabodeghas Logo">
+      <img src="logo.png" alt="Pasabodeghas Logo">
       <h1>Pasabodeghas</h1>
     </div>
     <div class="social-icons">
       <a href="#" aria-label="Facebook"><img src="facebook.png" alt="Facebook"></a>
-      <a href="#" aria-label="Instagram"><img src="instagram.png" alt="Instagram"></a>
+      <a href="https://www.instagram.com/espazoactivo?utm_source=ig_web_button_share_sheet&igsh=MTNlY2tjMmJybzY1OA==" aria-label="Instagram"><img src="instagram.png" alt="Instagram"></a>
     </div>
   </header>
 
@@ -94,11 +173,11 @@
         <div></div>
       </div>
       <div class="nav-links" id="navLinks">
-        <a href="#about">Sobre</a>
+        <a href="#about">O Pasabodeghas</a>
         <a href="#services">Servicios</a>
         <a href="#program">Programación</a>
-        <a href="#concerts">Conciertos</a>
-        <a href="#faq">FAQ</a>
+        <a href="#concerts">Concertos</a>
+        <a href="#faq">Preguntas</a>
         <a href="#location">Ubicación</a>
       </div>
     </div>
@@ -106,17 +185,29 @@
 
   <!-- Hero -->
   <div class="hero">
-    <img src="hero.jpg" alt="Pasabodeghas Festival">
+    <img src="Header.webp" alt="Pasabodeghas Festival">
     <div class="overlay">
-      <h2>Bienvenidos al Festival</h2>
-      <p>Texto descriptivo sobre la imagen</p>
+      <h2>ESPAZO ACTIVO DA ULLA</h2>
     </div>
   </div>
 
   <!-- Sobre -->
-  <section id="about">
-    <h2 class="section-title">Sobre el Festival</h2>
-    <p>Aquí irá la historia y descripción del festival...</p>
+  <section id="about" class="about-section">
+    <div class="about-content">
+        <div class="about-text">
+            <h2 class="section-title">O Pasabodeghas</h2>
+            <p>
+O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. Nace no seo da Asociación Cultural San Campio no ano 2001 a partir de contactos persoais entre membros de asociacións.
+<br><br>A realización deste proxecto fundaméntase no valeiro existente de actividades alternativas nesta zona do rural, e na falla de espazos para o encontro; na procura da promoción e a cooperación cultural, a difusión e o espallamento da cultura das terras da Ulla en particular e da galega en xeral.
+<br><br>Ao longo da súa vida esta iniciativa sufriu unha evolución, dando lugar a diferentes cambios no formato, partindo sempre dunha análise de necesidades e das inquedanzas dos veciños e veciñas e membros da entidade.
+<br><br>Actualmente realízase na última fin de semana do mes de outubro. Durante estes dous días xérase un gran espazo aberto e de convivencia, fomentando o intercambio de experiencias entre os asistentes, e entre estes e mailos veciños/as da zona a través das diferentes actividades.
+<br><br>A actividades estrela é o “Pasabodeghas” que se celebra o sábado pola tarde; unha ruta gaiteira por  adegas-casas que se converten en espazos de gastronomía e cultura.
+<br><br>Pola noite no espazo “Festexarte” teñen lugar os concertos de grupos de música folk, ska, rock…acompañados dun magosto.
+<br><br>O domingo celébrase un xantar-foliada, e o remate pono un espectáculo alternativo.
+<br><br>A nivel xeral, hai un bo nivel de participación e implicación. Cóntase coa colaboración de diferentes axentes comunitarios (asociacións, grupos musicais, empresas, organismos públicos)… e tamén de particulares.
+<br><br>En definitiva, este proxecto busca un uso activo e creativo do lecer da poboación xeral (nenos/as, xoves, persoas adultas e maiores) ao tempo que pon en valor as manifestacións culturais galegas como parte do noso patrimonio cultural.
+            </p>
+        </div>
     <img src="Image1.webp" alt="Imagen historia">
     <!-- Video YouTube embebido responsive -->
     <div class="embed-container">
@@ -129,11 +220,11 @@
     <h2 class="section-title">Servicios</h2>
     <div class="services-grid">
       <div class="service-item">
-        <img src="icon-parking.png" alt="Parking">
+        <img src="parking.png" alt="Parking">
         <p>Parking Gratis</p>
       </div>
       <div class="service-item">
-        <img src="icon-toilet.png" alt="Baños">
+        <img src="wc.png" alt="Baños">
         <p>Baños</p>
       </div>
       <div class="service-item">
@@ -146,16 +237,16 @@
   <!-- Programación -->
   <section id="program">
     <h2 class="section-title">Programación</h2>
-    <p>Texto introductorio de la programación.</p>
+    <p>Texto sobre a programacion, e poñer o cartel ou asi.</p>
     <div class="program-grid">
-      <img src="poster1.jpg" alt="Cartel Día 1">
-      <img src="poster2.jpg" alt="Cartel Día 2">
+      <img src="poster1.jpg" alt="Cartel horarios">
+      <img src="poster2.jpg" alt="Cartel mapa">
     </div>
   </section>
 
-  <!-- Conciertos -->
+  <!-- Concertos -->
   <section id="concerts">
-    <h2 class="section-title">Conciertos</h2>
+    <h2 class="section-title">Concertos</h2>
     <ul>
       <li>
         <h3>Grupo 1</h3>
@@ -163,7 +254,7 @@
       </li>
       <li>
         <h3>Grupo 2</h3>
-        <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank">Escuchar</a>
+        <a href="https://www.youtube.com/watch?v=bm0H42_TYos&list=OLAK5uy_kmKB-07DfBZh8d1AO6oBEk2v1ldBpiYHY&index=7" target="_blank">Escuchar</a>
       </li>
     </ul>
   </section>
@@ -192,7 +283,7 @@
       <a href="#">Prensa</a>
       <a href="#">Contacto</a>
     </div>
-    <p>&copy; 2025 Pasabodeghas Festival. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Pasabodeghas | Web por AsierCL.</p>
   </footer>
 
   <script>
