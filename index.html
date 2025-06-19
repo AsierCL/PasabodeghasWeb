@@ -31,6 +31,24 @@
     .hero img { width: 100%; height: auto; }
     .hero .overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 
+    /* Responsividad para iframes */
+    .embed-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 ratio */
+      height: 0;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .embed-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
     section { padding: 2rem 1rem; max-width: 1200px; margin: 0 auto; }
     .section-title { margin-bottom: 1rem; font-size: 1.5rem; }
 
@@ -46,7 +64,7 @@
     footer { background: #222; color: #fff; padding: 1rem; text-align: center; }
     footer .footer-links a { margin: 0 0.5rem; color: #fff; }
 
-    /* Responsive */
+    /* Responsive nav */
     @media (max-width: 768px) {
       .nav-links { display: none; flex-direction: column; background: #333; width: 100%; }
       .nav-links a { padding: 0.5rem; border-top: 1px solid #444; }
@@ -98,24 +116,11 @@
   <!-- Sobre -->
   <section id="about">
     <h2 class="section-title">Sobre el Festival</h2>
-    <p>Aquí irá la historia y descripción del festival.
-
-
-<br>O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. Nace no seo da Asociación Cultural San Campio no ano 2001 a partir de contactos persoais entre membros de asociacións.
-<br>A realización deste proxecto fundaméntase no valeiro existente de actividades alternativas nesta zona do rural, e na falla de espazos para o encontro; na procura da promoción e a cooperación cultural, a difusión e o espallamento da cultura das terras da Ulla en particular e da galega en xeral.
-<br>Ao longo da súa vida esta iniciativa sufriu unha evolución, dando lugar a diferentes cambios no formato, partindo sempre dunha análise de necesidades e das inquedanzas dos veciños e veciñas e membros da entidade.
-<br>Actualmente realízase na última fin de semana do mes de outubro. Durante estes dous días xérase un gran espazo aberto e de convivencia, fomentando o intercambio de experiencias entre os asistentes, e entre estes e mailos veciños/as da zona a través das diferentes actividades.
-<br>A actividades estrela é o “Pasabodeghas” que se celebra o sábado pola tarde; unha ruta gaiteira por  adegas-casas que se converten en espazos de gastronomía e cultura.
-<br>Pola noite no espazo “Festexarte” teñen lugar os concertos de grupos de música folk, ska, rock…acompañados dun magosto.
-<br>O domingo celébrase un xantar-foliada, e o remate pono un espectáculo alternativo.
-<br>A nivel xeral, hai un bo nivel de participación e implicación. Cóntase coa colaboración de diferentes axentes comunitarios (asociacións, grupos musicais, empresas, organismos públicos)… e tamén de particulares.
-<br>En definitiva, este proxecto busca un uso activo e creativo do lecer da poboación xeral (nenos/as, xoves, persoas adultas e maiores) ao tempo que pon en valor as manifestacións culturais galegas como parte do noso patrimonio cultural.
-
-    </p>
+    <p>Aquí irá la historia y descripción del festival...</p>
     <img src="Image1.webp" alt="Imagen historia">
-    <div>
-      <!-- Video YouTube embebido https://youtu.be/AQTHsG6EAqw?si=-->
-      <iframe width="560" height="315" src="https://youtu.be/AQTHsG6EAqw?si=bVW0hjNoFiQnr9mI" frameborder="0" allowfullscreen></iframe>
+    <!-- Video YouTube embebido responsive -->
+    <div class="embed-container">
+      <iframe src="https://www.youtube.com/embed/AQTHsG6EAqw?si=bVW0hjNoFiQnr9mI" allowfullscreen loading="lazy"></iframe>
     </div>
   </section>
 
@@ -135,7 +140,6 @@
         <img src="icon-food.png" alt="Comida">
         <p>Comida</p>
       </div>
-      <!-- Añadir más servicios según necesidad -->
     </div>
   </section>
 
@@ -146,7 +150,6 @@
     <div class="program-grid">
       <img src="poster1.jpg" alt="Cartel Día 1">
       <img src="poster2.jpg" alt="Cartel Día 2">
-      <!-- Más carteles -->
     </div>
   </section>
 
@@ -162,21 +165,21 @@
         <h3>Grupo 2</h3>
         <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank">Escuchar</a>
       </li>
-      <!-- Más grupos -->
     </ul>
   </section>
 
   <!-- Preguntas Frecuentes -->
   <section id="faq">
     <h2 class="section-title">Preguntas Frecuentes</h2>
-    <!-- Aquí irán las preguntas y respuestas -->
   </section>
 
   <!-- Ubicación -->
   <section id="location">
     <h2 class="section-title">Ubicación</h2>
-    <!-- Mapa embebido -->
-    <iframe src="https://maps.google.com/maps?q=Campo%20da%20festa%20San%20Miguel%20de%20Sarand%C3%B3n&#038;t=m&#038;z=10&#038;output=embed&#038;iwloc=near" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <!-- Mapa embebido responsive -->
+    <div class="embed-container">
+      <iframe src="https://maps.google.com/maps?q=Campo%20da%20festa%20San%20Miguel%20de%20Sarand%C3%B3n&t=m&z=10&output=embed&iwloc=near" loading="lazy"></iframe>
+    </div>
   </section>
 
   <!-- Footer -->
@@ -195,8 +198,7 @@
   <script>
     function toggleNav() {
       const links = document.getElementById('navLinks');
-      if (links.style.display === 'flex') links.style.display = 'none';
-      else links.style.display = 'flex';
+      links.style.display = (links.style.display === 'flex') ? 'none' : 'flex';
     }
   </script>
 </body>
