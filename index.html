@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pasabodeghas Festival</title>
+  <style>
+    /* Reset y estilos básicos */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    header { display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f4f4f4; }
+    .logo { display: flex; align-items: center; }
+    .logo img { width: 40px; height: 40px; margin-right: 0.5rem; }
+    .social-icons a { margin-left: 0.5rem; }
+
+    nav { background: #333; color: #fff; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; }
+    .nav-links { display: flex; }
+    .nav-links a { margin: 0 0.5rem; color: #fff; }
+    .burger { display: none; cursor: pointer; }
+    .burger div { width: 25px; height: 3px; background: #fff; margin: 5px; }
+
+    /* Header icons */
+    .social-icons img { width: 24px; height: 24px; }
+    
+    /* Hero */
+    .hero { position: relative; text-align: center; color: #fff; }
+    .hero img { width: 100%; height: auto; }
+    .hero .overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+    section { padding: 2rem 1rem; max-width: 1200px; margin: 0 auto; }
+    .section-title { margin-bottom: 1rem; font-size: 1.5rem; }
+
+    /* Servicios */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+    .service-item { text-align: center; }
+    .service-item img { width: 50px; height: 50px; margin-bottom: 0.5rem; }
+
+    /* Programación */
+    .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+
+    /* Footer */
+    footer { background: #222; color: #fff; padding: 1rem; text-align: center; }
+    footer .footer-links a { margin: 0 0.5rem; color: #fff; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; background: #333; width: 100%; }
+      .nav-links a { padding: 0.5rem; border-top: 1px solid #444; }
+      .burger { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <div class="logo">
+      <img src="millo.png" alt="Pasabodeghas Logo">
+      <h1>Pasabodeghas</h1>
+    </div>
+    <div class="social-icons">
+      <a href="#" aria-label="Facebook"><img src="facebook.png" alt="Facebook"></a>
+      <a href="#" aria-label="Instagram"><img src="instagram.png" alt="Instagram"></a>
+    </div>
+  </header>
+
+  <!-- Navegación -->
+  <nav>
+    <div class="nav-container">
+      <div class="burger" onclick="toggleNav()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">Sobre</a>
+        <a href="#services">Servicios</a>
+        <a href="#program">Programación</a>
+        <a href="#concerts">Conciertos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#location">Ubicación</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <img src="hero.jpg" alt="Pasabodeghas Festival">
+    <div class="overlay">
+      <h2>Bienvenidos al Festival</h2>
+      <p>Texto descriptivo sobre la imagen</p>
+    </div>
+  </div>
+
+  <!-- Sobre -->
+  <section id="about">
+    <h2 class="section-title">Sobre el Festival</h2>
+    <p>Aquí irá la historia y descripción del festival.
+
+
+<br>O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. Nace no seo da Asociación Cultural San Campio no ano 2001 a partir de contactos persoais entre membros de asociacións.
+<br>A realización deste proxecto fundaméntase no valeiro existente de actividades alternativas nesta zona do rural, e na falla de espazos para o encontro; na procura da promoción e a cooperación cultural, a difusión e o espallamento da cultura das terras da Ulla en particular e da galega en xeral.
+<br>Ao longo da súa vida esta iniciativa sufriu unha evolución, dando lugar a diferentes cambios no formato, partindo sempre dunha análise de necesidades e das inquedanzas dos veciños e veciñas e membros da entidade.
+<br>Actualmente realízase na última fin de semana do mes de outubro. Durante estes dous días xérase un gran espazo aberto e de convivencia, fomentando o intercambio de experiencias entre os asistentes, e entre estes e mailos veciños/as da zona a través das diferentes actividades.
+<br>A actividades estrela é o “Pasabodeghas” que se celebra o sábado pola tarde; unha ruta gaiteira por  adegas-casas que se converten en espazos de gastronomía e cultura.
+<br>Pola noite no espazo “Festexarte” teñen lugar os concertos de grupos de música folk, ska, rock…acompañados dun magosto.
+<br>O domingo celébrase un xantar-foliada, e o remate pono un espectáculo alternativo.
+<br>A nivel xeral, hai un bo nivel de participación e implicación. Cóntase coa colaboración de diferentes axentes comunitarios (asociacións, grupos musicais, empresas, organismos públicos)… e tamén de particulares.
+<br>En definitiva, este proxecto busca un uso activo e creativo do lecer da poboación xeral (nenos/as, xoves, persoas adultas e maiores) ao tempo que pon en valor as manifestacións culturais galegas como parte do noso patrimonio cultural.
+
+    </p>
+    <img src="Image1.webp" alt="Imagen historia">
+    <div>
+      <!-- Video YouTube embebido https://youtu.be/AQTHsG6EAqw?si=-->
+      <iframe width="560" height="315" src="https://youtu.be/AQTHsG6EAqw?si=bVW0hjNoFiQnr9mI" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="services">
+    <h2 class="section-title">Servicios</h2>
+    <div class="services-grid">
+      <div class="service-item">
+        <img src="icon-parking.png" alt="Parking">
+        <p>Parking Gratis</p>
+      </div>
+      <div class="service-item">
+        <img src="icon-toilet.png" alt="Baños">
+        <p>Baños</p>
+      </div>
+      <div class="service-item">
+        <img src="icon-food.png" alt="Comida">
+        <p>Comida</p>
+      </div>
+      <!-- Añadir más servicios según necesidad -->
+    </div>
+  </section>
+
+  <!-- Programación -->
+  <section id="program">
+    <h2 class="section-title">Programación</h2>
+    <p>Texto introductorio de la programación.</p>
+    <div class="program-grid">
+      <img src="poster1.jpg" alt="Cartel Día 1">
+      <img src="poster2.jpg" alt="Cartel Día 2">
+      <!-- Más carteles -->
+    </div>
+  </section>
+
+  <!-- Conciertos -->
+  <section id="concerts">
+    <h2 class="section-title">Conciertos</h2>
+    <ul>
+      <li>
+        <h3>Grupo 1</h3>
+        <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank">Escuchar</a>
+      </li>
+      <li>
+        <h3>Grupo 2</h3>
+        <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank">Escuchar</a>
+      </li>
+      <!-- Más grupos -->
+    </ul>
+  </section>
+
+  <!-- Preguntas Frecuentes -->
+  <section id="faq">
+    <h2 class="section-title">Preguntas Frecuentes</h2>
+    <!-- Aquí irán las preguntas y respuestas -->
+  </section>
+
+  <!-- Ubicación -->
+  <section id="location">
+    <h2 class="section-title">Ubicación</h2>
+    <!-- Mapa embebido -->
+    <iframe src="https://maps.google.com/maps?q=Campo%20da%20festa%20San%20Miguel%20de%20Sarand%C3%B3n&#038;t=m&#038;z=10&#038;output=embed&#038;iwloc=near" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="logo">
+      <img src="logo.png" alt="Pasabodeghas Logo" width="30" height="30">
+      <span>Pasabodeghas</span>
+    </div>
+    <div class="footer-links">
+      <a href="#">Prensa</a>
+      <a href="#">Contacto</a>
+    </div>
+    <p>&copy; 2025 Pasabodeghas Festival. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      const links = document.getElementById('navLinks');
+      if (links.style.display === 'flex') links.style.display = 'none';
+      else links.style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
