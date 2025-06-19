@@ -17,11 +17,58 @@
     .social-icons a { margin-left: 0.5rem; }
 
     nav { background: #333; color: #fff; }
-    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0.5rem; }
+    .nav-container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      padding: 0.5rem; 
+      position: relative;
+    }
     .nav-links { display: flex; }
     .nav-links a { margin: 0 0.5rem; color: #fff; }
-    .burger { display: none; cursor: pointer; }
+    .burger { 
+      display: none; 
+      cursor: pointer; 
+      position: absolute; 
+      left: 0; 
+      top: 50%; 
+      transform: translateY(-50%);
+    }
     .burger div { width: 25px; height: 3px; background: #fff; margin: 5px; }
+
+    @media (max-width: 768px) {
+      .nav-container {
+      justify-content: center;
+      padding: 1rem;
+      }
+      .nav-links { 
+      display: none; 
+      flex-direction: column; 
+      background: #333; 
+      width: 100%; 
+      align-items: center; /* centra los textos */
+      position: absolute;
+      left: 0;
+      top: 100%;
+      z-index: 10;
+      }
+      .nav-links a { 
+      padding: 0.5rem; 
+      border-top: 1px solid #444; 
+      width: 100%;
+      text-align: center;
+      }
+      .burger { 
+      /* Aqui se hace que el burger tenga un poco de espacio por arriba y por abajo, para aumentar el tamaño del area clicable */
+      display: block; 
+      left: 0; 
+      position: absolute; 
+      top: 50%; 
+      transform: translateY(-50%);
+      }
+    }
 
     /* Header icons */
     .social-icons img { width: 24px; height: 24px; }
