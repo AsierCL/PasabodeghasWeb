@@ -11,10 +11,28 @@
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; display: block; }
 
-    header { display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #f4f4f4; }
-    .logo { display: flex; align-items: center; }
+    header { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 1rem; 
+      background: #f4f4f4; 
+      position: relative;
+      z-index: 1;
+      min-height: 100px;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('TopHeader.jpg') center/cover no-repeat;
+      opacity: 0.45;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .logo { display: flex; align-items: center; z-index: 1; }
     .logo img { width: 40px; height: 40px; margin-right: 0.5rem; }
-    .social-icons a { margin-left: 0.5rem; }
+    .social-icons a { margin-left: 0.5rem; z-index: 1; }
 
     nav { background: #333; color: #fff; }
     .nav-container { 
@@ -27,7 +45,16 @@
       position: relative;
     }
     .nav-links { display: flex; }
-    .nav-links a { margin: 0 0.5rem; color: #fff; }
+    .nav-links a { 
+      margin: 0 0.5rem; 
+      color: #fff; 
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a:focus {
+      background: #fff;
+      color: #333;
+      border-radius: 4px;
+    }
     .burger { 
       display: none; 
       cursor: pointer; 
@@ -59,6 +86,10 @@
       border-top: 1px solid #444; 
       width: 100%;
       text-align: center;
+      }
+      .nav-links a:hover, .nav-links a:focus {
+      background: #fff;
+      color: #333;
       }
       .burger { 
       /* Aqui se hace que el burger tenga un poco de espacio por arriba y por abajo, para aumentar el tamaño del area clicable */
@@ -155,6 +186,13 @@
     flex-wrap: wrap;
     }
 
+    .section-title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: clamp(1.5rem, 5vw, 3rem);
+    }
+
     .about-text {
     flex: 1 1 350px;
     text-align: justify;
@@ -185,6 +223,68 @@
 
     /* Programación */
     .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+
+    .carrusel-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .carrusel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding: 1rem;
+      scroll-behavior: smooth;
+      scrollbar-width: none;         /* Firefox */
+      -ms-overflow-style: none;      /* IE */
+    }
+    .carrusel::-webkit-scrollbar {
+      display: none;                 /* Chrome */
+    }
+
+    .carrusel img {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 12px;
+      scroll-snap-align: start;
+      transition: transform 0.3s ease;
+    }
+    .carrusel img:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-left, .btn-right {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+    .btn-left:hover, .btn-right:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .btn-left {
+      left: 10px;
+    }
+
+    .btn-right {
+      right: 10px;
+    }
+
+
 
     /* Footer */
     footer { background: #222; color: #fff; padding: 1rem; text-align: center; }
@@ -224,6 +324,7 @@
         <a href="#services">Servicios</a>
         <a href="#program">Programación</a>
         <a href="#concerts">Concertos</a>
+        <a href="#photos">Imaxes</a>
         <a href="#faq">Preguntas</a>
         <a href="#location">Ubicación</a>
       </div>
@@ -306,6 +407,24 @@ O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. N
     </ul>
   </section>
 
+  <!-- Photos -->
+  <section id="photos">
+    <h2 class="section-title">Imaxes de outros anos</h2>
+    
+    <div class="carrusel-container">
+      <button class="btn-left" aria-label="Foto anterior">&#10094;</button>
+
+      <div class="carrusel" id="carrusel">
+        <img src="image1Remplazar.jpg" alt="Imaxe 1">
+        <img src="image1Remplazar.jpg" alt="Imaxe 2">
+        <img src="image1Remplazar.jpg" alt="Imaxe 3">
+        <img src="image1Remplazar.jpg" alt="Imaxe 4">
+      </div>
+
+      <button class="btn-right" aria-label="Foto seguinte">&#10095;</button>
+    </div>
+  </section>
+
   <!-- Preguntas Frecuentes -->
   <section id="faq">
     <h2 class="section-title">Preguntas Frecuentes</h2>
@@ -330,7 +449,7 @@ O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. N
       <a href="#">Prensa</a>
       <a href="#">Contacto</a>
     </div>
-    <p>&copy; 2025 Pasabodeghas | Web por AsierCL.</p>
+    <p>&copy; 2025 Pasabodeghas | Dev by AsierCL.</p>
   </footer>
 
   <script>
@@ -339,5 +458,21 @@ O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. N
       links.style.display = (links.style.display === 'flex') ? 'none' : 'flex';
     }
   </script>
+  <script>
+    const carrusel = document.getElementById('carrusel');
+    const btnLeft = document.querySelector('.btn-left');
+    const btnRight = document.querySelector('.btn-right');
+
+    const scrollAmount = 400; // píxeles a mover cada vez
+
+    btnLeft.addEventListener('click', () => {
+      carrusel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    btnRight.addEventListener('click', () => {
+      carrusel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  </script>
+
 </body>
 </html>
