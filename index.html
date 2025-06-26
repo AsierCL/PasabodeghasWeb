@@ -225,6 +225,75 @@
     /* Programación */
     .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
 
+    #concerts {
+      padding: 2rem 1rem;
+      background-color: #e7e7e7e7;
+    }
+
+    #concerts .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    #concerts .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #333;
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+    }
+
+    .concerts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .concert-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .concert-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .concert-card img {
+      cursor: pointer;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      flex-grow: 1;
+    }
+
+    .card-content h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: #222;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card-content audio {
+      width: 100%;
+    }
 
 
     /* Photos */
@@ -398,19 +467,35 @@ O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. N
   </section>
 
   <!-- Concertos -->
-  <section id="concerts">
-    <h2 class="section-title">Concertos</h2>
-    <ul>
-      <li>
-        <h3>Grupo 1</h3>
-        <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank">Escuchar</a>
-      </li>
-      <li>
-        <h3>Grupo 2</h3>
-        <a href="https://www.youtube.com/watch?v=bm0H42_TYos&list=OLAK5uy_kmKB-07DfBZh8d1AO6oBEk2v1ldBpiYHY&index=7" target="_blank">Escuchar</a>
-      </li>
-    </ul>
-  </section>
+<section id="concerts">
+  <h2 class="section-title">Concertos</h2>
+  <div class="concerts-grid">
+    <article class="concert-card" data-band="heredeiros">
+      <img src="HeredeirosDaCrus.jpg" alt="Here­deiros da Crús">
+      <div class="card-content">
+        <h3>HEREDEIROS DA CRUS</h3>
+        <audio controls>
+          <source src="EuQueroJosar.mp3" type="audio/mpeg">
+          O teu navegador non soporta o elemento de audio.
+        </audio>
+      </div>
+    </article>
+
+    <article class="concert-card" data-band="lamatumba">
+      <img src="Lamatumba.jpg" alt="Lamatumba">
+      <div class="card-content">
+        <h3>LAMATUMBA</h3>
+        <audio controls>
+          <source src="LicorKafe.mp3" type="audio/mpeg">
+          O teu navegador non soporta o elemento de audio.
+        </audio>
+      </div>
+    </article>
+
+    <!-- Replicar un <article> por cada grupo -->
+  </div>
+</section>
+
 
   <!-- Photos -->
   <section id="photos">
@@ -462,12 +547,15 @@ O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. N
     <p>&copy; 2025 Pasabodeghas | Dev by AsierCL.</p>
   </footer>
 
+  <!-- Script burger -->
   <script>
     function toggleNav() {
       const links = document.getElementById('navLinks');
       links.style.display = (links.style.display === 'flex') ? 'none' : 'flex';
     }
   </script>
+
+  <!-- Script carrusel -->
   <script>
     const carrusel = document.getElementById('carrusel');
     const btnLeft = document.querySelector('.btn-left');
@@ -483,6 +571,36 @@ O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. N
       carrusel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     });
   </script>
+  
+  <!-- Audio de grupos -->
+  <script>
+  // 1) Detectamos todas las tarjetas
+  const cards = document.querySelectorAll('.concert-card');
+  // 2) Para cada tarjeta, asociamos el audio y el evento de click
+  cards.forEach(card => {
+    const audio = card.querySelector('audio');
+    // Si clicas la propia barra o el control nativo, que no se duplique la acción extra
+    card.addEventListener('click', e => {
+      if (e.target.closest('audio')) return;
+      // Si está parado: play, si está sonando: pause
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    });
+  });
+
+  const audios = document.querySelectorAll('.concert-card audio');
+  audios.forEach(a => {
+    a.addEventListener('play', () => {
+      audios.forEach(other => {
+        if (other !== a) other.pause();
+      });
+    });
+  });
+  </script>
+
 
 </body>
 </html>
