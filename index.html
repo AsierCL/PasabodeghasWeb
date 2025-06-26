@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pasabodeghas Festival</title>
+  <link rel="icon" type="image/png" href="logo.png">
   <style>
     /* Reset y estilos básicos */
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -224,6 +225,9 @@
     /* Programación */
     .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
 
+
+
+    /* Photos */
     .carrusel-container {
       position: relative;
       display: flex;
@@ -238,20 +242,21 @@
       gap: 1rem;
       padding: 1rem;
       scroll-behavior: smooth;
-      scrollbar-width: none;         /* Firefox */
-      -ms-overflow-style: none;      /* IE */
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
     .carrusel::-webkit-scrollbar {
-      display: none;                 /* Chrome */
+      display: none;
     }
 
     .carrusel img {
       flex: 0 0 auto;
-      width: 100%;
-      max-width: 400px;
-      height: auto;
+      height: 300px; /* Alto fijo */
+      max-width: 100%;
+      object-fit: cover; /* Opción: "contain" si prefieres ver todo aunque haya márgenes */
       border-radius: 12px;
-      scroll-snap-align: start;
+      scroll-snap-align: center;
+      background-color: #f0f0f0; /* Fondo neutro para imágenes pequeñas */
       transition: transform 0.3s ease;
     }
     .carrusel img:hover {
@@ -416,9 +421,13 @@ O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. N
 
       <div class="carrusel" id="carrusel">
         <img src="image1Remplazar.jpg" alt="Imaxe 1">
-        <img src="image1Remplazar.jpg" alt="Imaxe 2">
-        <img src="image1Remplazar.jpg" alt="Imaxe 3">
-        <img src="image1Remplazar.jpg" alt="Imaxe 4">
+        <img src="image2Remplazar.jpg" alt="Imaxe 2">
+        <img src="image3Remplazar.jpg" alt="Imaxe 3">
+        <img src="image4Remplazar.jpg" alt="Imaxe 4">
+        <img src="image5Remplazar.jpg" alt="Imaxe 5">
+        <img src="image6Remplazar.jpg" alt="Imaxe 6">
+        <img src="image7Remplazar.jpg" alt="Imaxe 7">
+        <img src="image8Remplazar.jpg" alt="Imaxe 8">
       </div>
 
       <button class="btn-right" aria-label="Foto seguinte">&#10095;</button>
@@ -449,6 +458,7 @@ O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. N
       <a href="#">Prensa</a>
       <a href="#">Contacto</a>
     </div>
+    <!-- https://github.com/AsierCL/ -->
     <p>&copy; 2025 Pasabodeghas | Dev by AsierCL.</p>
   </footer>
 
