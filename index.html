@@ -358,6 +358,61 @@
       right: 10px;
     }
 
+    /* Preguntas Frecuentes */
+    #faq {
+      padding: 3rem 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .faq-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+      background: #f9f9f9;
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1rem;
+      text-align: left;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      background-color: #fff;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 1rem;
+      background: #f0f0f0;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px; /* puedes ajustar según el contenido */
+      padding: 1rem;
+    }
 
 
     /* Footer */
@@ -530,7 +585,26 @@ O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. N
   <!-- Preguntas Frecuentes -->
   <section id="faq">
     <h2 class="section-title">Preguntas Frecuentes</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-question">Podo acceder ao pasabodeghas sen o pack?</button>
+        <div class="faq-answer">
+          <p>A partires dos 12 anos é necesario ter o pack pasabodeghas para acceder á ruta.<br><br>
+              A diferencia radica en que as persoas de 12 a 18 anos só poderán consumir bebidas non alcoholicas dentro da ruta (refrescos) e os maiores de 18 anos terán dereito á degustación do viño.<br><br>
+              Os/as menores de 12 anos poderán acceder ao recinto de forma gratuíta, pero precisan vir acompañados/as dun adulto responsable para poder entrar. De forma opcional, poden adquirir un pack infantil O PROPIO DÍA DO EVENTO NA ENTRADA DO MESMO por 10€ que inclúe xerro infantil, pulseira, lambonadas, degustación de refrescos...
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Canto costa o pack e qué inclúe?</button>
+        <div class="faq-answer">
+          <p>Ten un custo de 15€ e inclúe xerro de barro, pulseira, degustación de bebidas e tapas, ambiente festeiro con música tradicional, espectáculos, mostras, concertos...</p>
+        </div>
+      </div>
+      <!-- Add more faq-item here -->
+    </div>
   </section>
+
 
   <!-- Ubicación -->
   <section id="location">
@@ -608,6 +682,17 @@ O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. N
     });
   });
   </script>
+
+  <!-- FAQ Script -->
+  <script>
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+  </script>
+
 
 
 </body>
