@@ -419,9 +419,66 @@
     }
 
 
-    /* Footer */
-    footer { background: #222; color: #fff; padding: 1rem; text-align: center; }
-    footer .footer-links a { margin: 0 0.5rem; color: #fff; }
+    /* Footer general */
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 1rem;
+    }
+
+    /* Contenedor flex para alinear izquierda, centro y derecha */
+    .footer-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap; /* para que en pantallas pequeñas se adapte */
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Izquierda */
+    .footer-left {
+      display: flex;
+      align-items: center;
+    }
+    .logo-main {
+      width: 30px;
+      height: 30px;
+      margin-right: 0.5rem;
+    }
+    .logo-text {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    /* Centro */
+    .footer-links a {
+      margin: 0 0.5rem;
+      color: #fff;
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Derecha: logos extra */
+    .footer-right {
+      display: flex;
+      align-items: center;
+    }
+    .logo-extra {
+      width: 40px;
+      height: auto;
+      margin-left: 0.75rem;
+    }
+
+    /* Copyright */
+    .footer-copy {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
 
     /* Responsive nav */
     @media (max-width: 768px) {
@@ -625,18 +682,36 @@ Ten un custo de 15€ e inclúe xerro de barro, pulseira, degustación de bebida
 
   <!-- Footer -->
   <footer>
-    <div class="logo">
-      <img src="logo.png" alt="Pasabodeghas Logo" width="30" height="30">
-      <span>Pasabodeghas</span>
+    <div class="footer-container">
+      <!-- Izquierda: logo principal + texto -->
+      <div class="footer-left">
+        <img src="images/logos/logo.png" alt="Pasabodeghas Logo" class="logo-main">
+        <span class="logo-text">Pasabodeghas</span>
+      </div>
+
+      <!-- Centro: enlaces -->
+      <div class="footer-center footer-links">
+        <a href="#">Prensa</a>
+        <a href="#">Contacto</a>
+      </div>
+
+      <!-- Derecha: logos adicionales -->
+      <div class="footer-right">
+        <a href="/concurso.html" target="_blank" rel="noopener">
+          <img src="images/logos/DeputacionDaCoruña.png" alt="Logo Deputacion" class="logo-extra">
+        </a>
+        <a href="ENLACE_AQUI" target="_blank" rel="noopener">
+          <img src="images/logos/XuntaDeGalicia.png" alt="Logo Xunta de Galicia" class="logo-extra">
+        </a>
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="#">Prensa</a>
-      <a href="#">Contacto</a>
-    </div>
-    <!-- https://github.com/AsierCL/ -->
-    <p>&copy; 2025 Pasabodeghas | Dev by AsierCL.</p>
+
+    <p class="footer-copy">&copy; 2025 Pasabodeghas | Dev by AsierCL.</p>
   </footer>
 
+
+  <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+  <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
   <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
    
   <!-- Script burger -->
@@ -702,8 +777,6 @@ Ten un custo de 15€ e inclúe xerro de barro, pulseira, degustación de bebida
     });
   });
   </script>
-
-
 
 </body>
 </html>
