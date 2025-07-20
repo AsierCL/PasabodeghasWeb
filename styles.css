@@ -413,102 +413,71 @@ footer {
   font-family: sans-serif;
 }
 
-/* Contenedor de columnas */
+/* Contenedor principal de logos */
 .footer-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-/* Estilos comunes para columnas */
-.footer-left,
-.footer-center,
-.footer-right {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  min-width: 200px;
-}
-
-/* Alineación específica por columna */
-.footer-left {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Espacio entre logo e texto */
-}
-
-.footer-center {
-  align-items: center;
+  align-items: flex-start;
+  gap: 5rem; /* 🔹 Este es el valor que separa los dos grupos de logos */
+  flex-wrap: wrap;
   text-align: center;
 }
 
-.footer-right {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Espacio entre logo e texto */
-}
-
-/* Logo principal */
-.logo-main {
-  height: 40px;
-}
-
-.logo-text {
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-/* Logos de organizadores y colaboradores */
+/* Grupo individual: Organizan / Colaboran */
 .footer-group {
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
+/* Título de cada grupo */
 .footer-title {
   font-weight: bold;
-  margin-bottom: 5px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #fff;
 }
 
+/* Contenedor de logos */
 .footer-logos {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
-  justify-content: flex-end;
 }
 
+/* Logos individuales */
 .footer-logos img.logo-extra {
   height: 40px;
   object-fit: contain;
 }
 
+/* Línea inferior del footer */
 .footer-copy {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-size: 0.875rem;
-  color: #aaa;
+  color: #ddd;
 }
 
+/* Responsive: móviles */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    gap: 10px; /* Menor separación entre grupos en móviles */
   }
 
-  .footer-left,
-  .footer-center,
-  .footer-right {
-    align-items: center !important;
-    text-align: center !important;
-    margin-bottom: 20px;
+  .footer-group {
+    width: 100%;
   }
 
   .footer-logos {
     justify-content: center;
   }
 }
+
 
 
 

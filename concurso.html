@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- --------------------------- -->
+  <!-- https://github.com/AsierCL/ -->
+  <!-- --------------------------- -->
+   
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Concurso Cartel Pasabodeghas 2025</title>
+  <link rel="icon" type="image/png" href="images/logos/logo.png">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -62,6 +67,79 @@
     .pdf-link {
       margin-top: 1rem;
     }
+
+
+    /* Footer base */
+    footer {
+      background-color: #888;
+      padding: 20px 40px;
+      font-family: sans-serif;
+    }
+
+    /* Contenedor principal de logos */
+    .footer-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 5rem; /* 🔹 Este es el valor que separa los dos grupos de logos */
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    /* Grupo individual: Organizan / Colaboran */
+    .footer-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    /* Título de cada grupo */
+    .footer-title {
+      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    /* Contenedor de logos */
+    .footer-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    /* Logos individuales */
+    .footer-logos img.logo-extra {
+      height: 40px;
+      object-fit: contain;
+    }
+
+    /* Línea inferior del footer */
+    .footer-copy {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: #ddd;
+    }
+
+    /* Responsive: móviles */
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px; /* Menor separación entre grupos en móviles */
+      }
+
+      .footer-group {
+        width: 100%;
+      }
+
+      .footer-logos {
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -114,4 +192,38 @@
     </section>
   </main>
 </body>
+<footer>
+  <div class="footer-container">
+      <!-- Organizan -->
+      <div class="footer-group">
+        <p class="footer-title">Organizan</p>
+        <div class="footer-logos">
+          <a target="_blank" rel="noopener">
+            <img src="images/logos/RequintaDaLaxeira.png" alt="Logo Requinta da Laxeira" class="logo-extra">
+          </a>
+          <a target="_blank" rel="noopener">
+            <img src="images/logos/ACSanCampio.png" alt="Logo AC San Campio" class="logo-extra">
+          </a>
+        </div>
+      </div>
+
+      <!-- Colaboran -->
+      <div class="footer-group">
+        <p class="footer-title">Colaboran</p>
+        <div class="footer-logos">
+          <a target="_blank" rel="noopener">
+            <img src="images/logos/ConcelloDeVedra.png" alt="Logo Concello de Vedra" class="logo-extra">
+          </a>
+          <a target="_blank" rel="noopener">
+            <img src="images/logos/DeputacionDaCoruña.png" alt="Logo Deputación da Coruña" class="logo-extra">
+          </a>
+          <a target="_blank" rel="noopener">
+            <img src="images/logos/XuntaDeGalicia.png" alt="Logo Xunta de Galicia" class="logo-extra">
+          </a>
+        </div>
+      </div>
+  </div>
+
+  <p class="footer-copy">&copy; 2025 Pasabodeghas | Dev by AsierCL.</p>
+</footer>
 </html>
