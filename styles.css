@@ -18,7 +18,7 @@ header::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url('images/TopHeader.jpg') center/cover no-repeat;
+  background: url('images/TopHeader.webp') center/cover no-repeat;
   opacity: 0.45;
   z-index: 0;
   pointer-events: none;
@@ -288,6 +288,91 @@ padding: 1rem 0;
 }
 
 
+/* Concurso */
+#concurso-destacado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+#concurso-destacado h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.concurso-texto {
+  flex: 1 1 300px;
+  min-width: 250px;
+}
+
+.concurso-texto h3 {
+  margin-bottom: 1rem;
+}
+
+.concurso-texto p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.concurso-texto a {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.concurso-imagen {
+  flex: 1 1 80px; /* más ancha */
+  background-color: #444;
+  border-radius: 8px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.concurso-imagen img {
+  max-height: 250px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  object-fit: contain;
+}
+
+/* 🔽 Móviles: todo en columna, imagen centrada */
+@media (max-width: 768px) {
+  #concurso-destacado {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .concurso-texto,
+  .concurso-imagen {
+    width: 100%;
+  }
+
+  .concurso-imagen {
+    justify-content: center;
+  }
+
+  .concurso-imagen img {
+    max-width: 80%;
+  }
+}
+
+
+
 /* Photos */
 .carrusel-container {
   position: relative;
@@ -477,8 +562,6 @@ footer {
     justify-content: center;
   }
 }
-
-
 
 
 /* Responsive nav */
