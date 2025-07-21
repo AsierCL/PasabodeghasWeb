@@ -21,7 +21,7 @@
   <link rel="icon" type="image/png" href="images/logos/logo.png">
 </head>
 <style>
-/* Reset y estilos básicos */
+/* Reset e estilos básicos */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: Arial, sans-serif; line-height: 1.5; }
 a { text-decoration: none; color: inherit; }
@@ -91,7 +91,7 @@ nav { background: #333; color: #fff; }
   flex-direction: column; 
   background: #333; 
   width: 100%; 
-  align-items: center; /* centra los textos */
+  align-items: center; /* centra os textos */
   position: absolute;
   left: 0;
   top: 100%;
@@ -108,7 +108,7 @@ nav { background: #333; color: #fff; }
   color: #333;
   }
   .burger { 
-  /* Aqui se hace que el burger tenga un poco de espacio por arriba y por abajo, para aumentar el tamaño del area clicable */
+  /* Aumenta o espacio do burger, e o espacio clicable */
   display: block; 
   left: 0; 
   position: absolute; 
@@ -123,7 +123,7 @@ nav { background: #333; color: #fff; }
 .hero {
 position: relative;
 width: 100%;
-height: 60vh; /* Ajusta la altura según lo que necesites */
+height: 60vh;
 display: flex;
 align-items: center;
 justify-content: center;
@@ -143,7 +143,7 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-background: rgba(0,0,0,0.4); /* Oscurece la imagen para mejor legibilidad */
+background: rgba(0,0,0,0.4); /* Oscurece a imaxe de fondo */
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -186,7 +186,7 @@ text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
 section { padding: 2rem 1rem; max-width: 1200px; margin: 0 auto; }
 .section-title { margin-bottom: 1rem; font-size: 3rem; }
 
-/* Sobre el Festival */
+/* Sobre o Festival */
 .about-section {
 padding: 3rem 1rem;
 background: #fff;
@@ -233,7 +233,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-/* opcional: para dar algo de espacio interior */
+/* para dar algo de espacio interior */
 padding: 1rem 0;
 }
 
@@ -312,7 +312,7 @@ padding: 1rem 0;
 
 
 /* Concurso */
-#concurso-destacado {
+#concurso {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -323,7 +323,7 @@ padding: 1rem 0;
   border-radius: 12px;
 }
 
-#concurso-destacado h2 {
+#concurso h2 {
   width: 100%;
   text-align: center;
   margin-bottom: 1rem;
@@ -355,7 +355,7 @@ padding: 1rem 0;
 }
 
 .concurso-imagen {
-  flex: 1 1 80px; /* más ancha */
+  flex: 1 1 80px; /* anchura */
   background-color: #444;
   border-radius: 8px;
   padding: 0.5rem;
@@ -373,9 +373,9 @@ padding: 1rem 0;
   object-fit: contain;
 }
 
-/* 🔽 Móviles: todo en columna, imagen centrada */
+/* Móviles: todo en columna, imagen centrada */
 @media (max-width: 768px) {
-  #concurso-destacado {
+  #concurso {
     flex-direction: column;
     text-align: center;
   }
@@ -422,10 +422,10 @@ padding: 1rem 0;
   flex: 0 0 auto;
   height: 300px; /* Alto fijo */
   max-width: 100%;
-  object-fit: cover; /* Opción: "contain" si prefieres ver todo aunque haya márgenes */
+  object-fit: cover; /* Opción: "contain" para ver todo inda que  haxa marxes */
   border-radius: 12px;
   scroll-snap-align: center;
-  background-color: #f0f0f0; /* Fondo neutro para imágenes pequeñas */
+  background-color: #f0f0f0; /* Fondo neutro para fotos pequechas */
   transition: transform 0.3s ease;
 }
 .carrusel img:hover {
@@ -510,7 +510,7 @@ padding: 1rem 0;
 }
 
 .faq-item.active .faq-answer {
-  max-height: 1200px; /* puedes ajustar según el contenido */
+  max-height: 1200px;
   padding: 1rem;
 }
 
@@ -526,7 +526,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 5rem; /* 🔹 Este es el valor que separa los dos grupos de logos */
+  gap: 5rem; /* Separacion entre grupo de logos (organizan/colaboran) */
   flex-wrap: wrap;
   text-align: center;
 }
@@ -561,7 +561,7 @@ footer {
   object-fit: contain;
 }
 
-/* Línea inferior del footer */
+/* Línea inferior do footer */
 .footer-copy {
   text-align: center;
   margin-top: 1rem;
@@ -574,7 +574,7 @@ footer {
   .footer-container {
     flex-direction: column;
     align-items: center;
-    gap: 10px; /* Menor separación entre grupos en móviles */
+    gap: 10px; /* Menos separación entre grupos en móviles */
   }
 
   .footer-group {
@@ -619,9 +619,7 @@ footer {
       </div>
       <div class="nav-links" id="navLinks">
         <a href="#about">O Pasabodeghas</a>
-        <a href="#services">Servicios</a>
-        <a href="#program">Programación</a>
-        <a href="#concerts">Concertos</a>
+        <a href="#concurso">Cartel</a>
         <a href="#photos">Imaxes</a>
         <a href="#faq">Preguntas</a>
         <a href="#location">Ubicación</a>
@@ -670,7 +668,7 @@ O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. N
   </section>
 
   <!-- Concurso -->
-  <section id="concurso-destacado">
+  <section id="concurso">
     <h2>Cartel do Pasabodeghas</h2>
     <div class="concurso-texto">
       <h3>🏆 Concurso en marcha 🎨</h3>
@@ -735,7 +733,6 @@ Inclúe xerro de barro, pulseira, degustación de bebidas e tapas, ambiente fest
           </p>
         </div>
       </div>
-      <!-- Add more faq-item here -->
     </div>
   </section>
 
@@ -808,15 +805,15 @@ Inclúe xerro de barro, pulseira, degustación de bebidas e tapas, ambiente fest
   
   <!-- Audio de grupos -->
   <script>
-  // 1) Detectamos todas las tarjetas
+  // Detectamos todas as tarxetas
   const cards = document.querySelectorAll('.concert-card');
-  // 2) Para cada tarjeta, asociamos el audio y el evento de click
+  // Asociar o audio e o evento de click a cada tarxeta
   cards.forEach(card => {
     const audio = card.querySelector('audio');
-    // Si clicas la propia barra o el control nativo, que no se duplique la acción extra
+    // Evitar que se duplique o evento de click
     card.addEventListener('click', e => {
       if (e.target.closest('audio')) return;
-      // Si está parado: play, si está sonando: pause
+      // Si está sonando outro audio, pausalo
       if (audio.paused) {
         audio.play();
       } else {
