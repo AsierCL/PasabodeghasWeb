@@ -10,136 +10,204 @@
   <title>Concurso Cartel Pasabodeghas 2025</title>
   <link rel="icon" type="image/png" href="images/logos/logo.png">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background: #fff;
-      color: #333;
-    }
+/* 1. Tipografía global */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+  color: #333;
+}
 
-    header {
-      text-align: center;
-      background-color: #f4f4f4;
-      padding: 2rem 1rem;
-      margin-bottom: 2rem;
-    }
+/* 2. Main y contenedor */
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
 
-    header h1 {
-      font-size: 2.5rem;
-      color: #222;
-    }
+/* 3. Header con fondo y sombra */
+header {
+  position: relative;
+  text-align: center;
+  background: url('images/Header.webp') center/cover no-repeat;
+  background-blend-mode: darken;
+  opacity: 0.73;
+  color: #fff;
+  padding: 3rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  border-radius: 12px;
+}
+header * {
+  position: relative;
+  z-index: 1;
+}
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+header p {
+  font-size: 1.1rem;
+}
 
-    section {
-      margin-bottom: 2rem;
-    }
+/* 4. Secciones como “tarjetas” */
+section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+}
+section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+}
+h2 {
+  color: #444;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  
+  position: relative;
+}
+h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: #8b0000;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
 
-    h2 {
-      color: #444;
-      margin-bottom: 1rem;
-    }
+/* 5. Listas y párrafos */
+ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+ul li {
+  margin-bottom: 0.5rem;
+}
+p {
+  margin-bottom: 1rem;
+}
 
-    ul {
-      padding-left: 1.5rem;
-    }
+/* 6. Botón principal */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #8b0000;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.button:hover {
+  background-color: #a60000;
+  transform: translateY(-2px);
+}
 
-    .button {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background-color: #8b0000;
-      color: #fff;
-      text-align: center;
-      border-radius: 5px;
-      margin-top: 1rem;
-    }
+/* 7. Descarga PDF */
+.pdf-link {
+  text-align: center;
+}
+.pdf-link .button {
+  margin-top: 1rem;
+}
 
-    .button:hover {
-      background-color: #a60000;
-    }
+/* 8. Pie de página */
+footer {
+  background-color: #222;
+  color: #ddd;
+  padding: 2rem 1rem;
+}
+.footer-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.footer-group {
+  text-align: center;
+}
+.footer-title {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+.footer-logos {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.footer-logos img {
+  height: 40px;
+  filter: brightness(1.2);
+  transition: filter 0.3s;
+}
+.footer-logos img:hover {
+  filter: brightness(1.5);
+}
+.footer-copy {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+}
 
-    .pdf-link {
-      margin-top: 1rem;
-    }
+/* 9. Responsive */
+@media (max-width: 768px) {
+  header {
+    padding: 2rem 1rem;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
 
+  main { padding: 1rem; }
 
-    /* Footer base */
-    footer {
-      background-color: #888;
-      padding: 20px 40px;
-      font-family: sans-serif;
-    }
+  section {
+    padding: 1rem;
+  }
+  h2 { font-size: 1.5rem; }
 
-    /* Contenedor principal de logos */
-    .footer-container {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 5rem; /* 🔹 Este es el valor que separa los dos grupos de logos */
-      flex-wrap: wrap;
-      text-align: center;
-    }
+  .button { width: 100%; text-align: center; }
 
-    /* Grupo individual: Organizan / Colaboran */
-    .footer-group {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 20px;
-    }
+  .footer-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 
-    /* Título de cada grupo */
-    .footer-title {
-      font-weight: bold;
-      font-size: 1rem;
-      margin-bottom: 10px;
-      color: #fff;
-    }
+    /* Asegura un padding horizontal al contenedor para que siempre quede margen */
+  .pdf-link {
+    text-align: center;
+    padding: 0 1rem;   /* margen a izquierda y derecha */
+  }
 
-    /* Contenedor de logos */
-    .footer-logos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
+  /* El botón ya no ocupa el 100%: será inline‑block, podrá envolver su texto y respetar el padding */
+  .pdf-link .button {
+    display: inline-block;
+    width: auto;               /* elimina width: 100% */
+    max-width: 100%;           /* nunca exceder el contenedor */
+    white-space: normal;       /* permite salto de línea dentro del texto */
+    word-break: break-word;    /* si una palabra es muy larga, la parte sobrante baja */
+  }
+}
 
-    /* Logos individuales */
-    .footer-logos img.logo-extra {
-      height: 40px;
-      object-fit: contain;
-    }
-
-    /* Línea inferior del footer */
-    .footer-copy {
-      text-align: center;
-      margin-top: 1rem;
-      font-size: 0.875rem;
-      color: #ddd;
-    }
-
-    /* Responsive: móviles */
-    @media (max-width: 768px) {
-      .footer-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px; /* Menor separación entre grupos en móviles */
-      }
-
-      .footer-group {
-        width: 100%;
-      }
-
-      .footer-logos {
-        justify-content: center;
-      }
-    }
   </style>
 </head>
 <body>
