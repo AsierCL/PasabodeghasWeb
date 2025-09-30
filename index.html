@@ -792,6 +792,46 @@ Nesta edición acollemos aos compañeiros/as do Festival Castelo Conta; unha ini
   </section>
 
 
+  <!-- Concertos -->
+  <section id="concerts">
+    <h2 class="section-title">Grupos Confirmados</h2>
+    <div class="concerts-grid">
+      <article class="concert-card" data-band="heredeiros">
+        <img src="images/grupos/HeredeirosDaCrus.jpg" alt="Heredeiros da Crús">
+        <div class="card-content">
+          <h3>HEREDEIROS DA CRUS</h3>
+          <audio controls>
+            <source src="EuQueroJosar.mp3" type="audio/mpeg">
+            O teu navegador non soporta o elemento de audio.
+          </audio>
+        </div>
+      </article>
+
+      <article class="concert-card" data-band="lamatumba">
+        <img src="images/grupos/Lamatumba.jpg" alt="Lamatumba">
+        <div class="card-content">
+          <h3>LAMATUMBA</h3>
+          <audio controls>
+            <source src="LicorKafe.mp3" type="audio/mpeg">
+            O teu navegador non soporta o elemento de audio.
+          </audio>
+        </div>
+      </article>
+
+      <article class="concert-card" data-band="lamatumba">
+        <img src="images/grupos/Lamatumba.jpg" alt="Lamatumba">
+        <div class="card-content">
+          <h3>LAMATUMBA</h3>
+          <audio controls>
+            <source src="LicorKafe.mp3" type="audio/mpeg">
+            O teu navegador non soporta o elemento de audio.
+          </audio>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
   <!-- Photos -->
     </div>
   </section>
@@ -950,7 +990,39 @@ Inclúe xerro de barro, pulseira, degustación de bebidas e tapas, ambiente fest
   });
   </script>
 
+  <!-- Script para controlar los audios de los conciertos -->
+  <script>
+    // Detectamos todas las tarjetas de conciertos
+    const concertCards = document.querySelectorAll('.concert-card');
 
+    // Asociar el audio y el evento de click a cada tarjeta
+    concertCards.forEach(card => {
+      const audio = card.querySelector('audio');
+
+      // Evitar que se duplique el evento de click
+      card.addEventListener('click', e => {
+        if (e.target.closest('audio')) return;
+
+        // Si está sonando otro audio, pausarlo
+        if (audio.paused) {
+          // Pausar todos los audios primero
+          document.querySelectorAll('.concert-card audio').forEach(a => a.pause());
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      });
+    });
+
+    // Asegurarse de que solo suene un audio a la vez
+    document.querySelectorAll('.concert-card audio').forEach(audio => {
+      audio.addEventListener('play', () => {
+        document.querySelectorAll('.concert-card audio').forEach(other => {
+          if (other !== audio) other.pause();
+        });
+      });
+    });
+  </script>
 
   <script type="application/ld+json">
   {
