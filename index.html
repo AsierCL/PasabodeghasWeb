@@ -7,28 +7,91 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content="Pasabodeghas, Festival, Galicia, cultura galega, música folk, Sarandón, actividades culturais, magosto, ruta gaiteira, gaita, festival">
+  <meta name="description" content="O Pasabodeghas: Festival de música tradicional e cultura galega en Sarandón. Goza de concertos en vivo, magosto, ruta gaiteira, actividades culturais e moito máis. Un evento único para toda a familia.">
+  <meta name="keywords" content="Pasabodeghas, Festival Galicia, música tradicional galega, Sarandón, folk galego, magosto tradicional, ruta gaiteira, gaitas galegas, festival cultural, música en vivo, Heredeiros da Crus, Lamatumba">
   <meta name="author" content="AsierCL">
-  <meta property="og:title" content="O Pasabodeghas">
-  <meta property="og:description" content="Festival de música e cultura galega en Sarandón. Participa en concertos, magosto, e máis.">
-  <meta property="og:image" content="images/Header.webp">
-  <!-- <meta property="og:url" content="https://ejemplo.com"> -->
-  <meta property="og:type" content="website">
-  <meta name="twitter:title" content="O Pasabodeghas">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="description" content="Festival de música e cultura galega en Sarandón. Concertos, magosto, ruta gaiteira e moitas máis actividades.">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="gl">
+  <meta name="geo.region" content="ES-GA">
+  <meta name="geo.placename" content="Sarandón, Vedra">
 
-  <title>O Pasabodeghas</title>
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="O Pasabodeghas - Festival de Música e Cultura Galega">
+  <meta property="og:description" content="Festival de música tradicional e cultura galega en Sarandón. Concertos en vivo, magosto, ruta gaiteira e moitas máis actividades para toda a familia.">
+  <meta property="og:image" content="images/Header.webp">
+  <meta property="og:image:alt" content="Imaxe do Festival Pasabodeghas">
+  <!-- <meta property="og:url" content="https://ejemplo.com"> -->
+  <meta property="og:locale" content="gl_ES">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="O Pasabodeghas - Festival de Música e Cultura Galega">
+  <meta name="twitter:description" content="Festival de música tradicional e cultura galega en Sarandón. Concertos, magosto, ruta gaiteira e moitas máis actividades.">
+  <meta name="twitter:image" content="images/Header.webp">
+  <meta name="twitter:image:alt" content="Imaxe do Festival Pasabodeghas">
+
+  <title>O Pasabodeghas - Festival de Música e Cultura Galega en Sarandón</title>
   <link rel="icon" type="image/png" href="images/logos/logo.webp">
   <link rel="preload" href="images/TopHeader.webp" as="image">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="canonical" href="https://www.pasabodeghas.gal" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Festival",
+      "name": "O Pasabodeghas",
+      "description": "Festival de música tradicional e cultura galega en Sarandón",
+      "startDate": "2025-09-30",
+      "endDate": "2025-09-30",
+      "location": {
+        "@type": "Place",
+        "name": "Sarandón",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Vedra",
+          "addressRegion": "A Coruña",
+          "addressCountry": "ES"
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Espazo Activo",
+        "url": "https://www.facebook.com/espazoactivodaulla"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.pasabodeghas.gal",
+        "availability": "https://schema.org/InStock"
+      },
+      "performer": [
+        {
+          "@type": "MusicGroup",
+          "name": "Banda de Shangai"
+        },
+        {
+          "@type": "MusicGroup",
+          "name": "Ses"
+        }
+        {
+          "@type": "MusicGroup",
+          "name": "A Requinta Da Laxeira"
+        }
+      ],
+      "image": "images/Header.webp"
+    }
+  </script>
 </head>
 <style>
 /* Reset e estilos básicos */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: Arial, sans-serif; line-height: 1.5; }
+body { font-family: Arial, sans-serif; line-height: 1.5; color: #333; }
 a { text-decoration: none; color: inherit; }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
+main { display: block; } /* For older browsers */
+article, aside, footer, header, nav, section { display: block; }
 
 header {
   display: flex;
@@ -271,7 +334,7 @@ border-radius: 12px;
   display: block;
   width: 50px;
   height: 3px;
-  background: #007bff;
+  background: #fff200;
   margin-top: 0.5rem;
 }
 
@@ -284,7 +347,7 @@ border-radius: 12px;
 
 .features-list li::before {
   content: '•';
-  color: #007bff;
+  color: #fff200;
   font-size: 1.5rem;
   position: absolute;
   left: 0.5rem;
@@ -325,7 +388,7 @@ border-radius: 12px;
 .service-icon {
   width: 64px;
   height: 64px;
-  background-color: #007bff;
+  background-color: #fff200;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -715,8 +778,8 @@ footer {
   <header>
     <div class="logo">
       <img src="images/logos/logo.webp" alt="Pasabodeghas Logo">
-      <h1>Pasabodeghas</h1>
     </div>
+    <h1>Espazo Activo da Ulla - Pasabodeghas</h1>
     <div class="social-icons">
       <a href="https://www.facebook.com/espazoactivodaulla" aria-label="Facebook" target="_blank" rel="noopener"><img src="images/logos/facebook.webp" alt="Facebook"></a>
       <a href="https://www.instagram.com/espazoactivo?utm_source=ig_web_button_share_sheet&igsh=MTNlY2tjMmJybzY1OA==" aria-label="Instagram" target="_blank" rel="noopener"><img src="images/logos/instagram.webp" alt="Instagram"></a>
@@ -749,20 +812,27 @@ footer {
   </nav>
 
   <!-- Hero EspazoActivo-->
-  <div class="hero">
-        <img src="images/espazoactivo/HeaderEspazoActivo.webp" alt="Pasabodeghas Festival" width="1920" height="1080" fetchpriority="high">
-    <div class="overlay">
-      <h2>ESPAZO ACTIVO DA ULLA</h2>
-    </div>
-  </div>
-
-  <!-- Sobre EspazoAcrivo-->
+    <div class="hero" role="banner">
+      <img src="images/espazoactivo/HeaderEspazoActivo.webp"
+           alt="Festival Pasabodeghas en Sarandón"
+           width="1920"
+           height="1080"
+           fetchpriority="high">
+      <div class="overlay">
+        <h1>ESPAZO ACTIVO DA ULLA</h1>
+      </div>
+    </div>  <!-- Sobre EspazoAcrivo-->
   <section id="espazoactivo" class="about-section">
     <div class="about-content">
         <div class="about-text">
             <p>
 O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. Nace no seo da Asociación Cultural San Campio no ano 2001 a partir de contactos persoais entre membros de asociacións.
-<br><br>A realización deste proxecto fundaméntase no valeiro existente de actividades alternativas nesta zona do rural, e na falla de espazos para o encontro; na procura da promoción e a cooperación cultural, a difusión e o espallamento da cultura das terras da Ulla en particular e da galega en xeral; potenciando o desenvolvemento comunitario e endóxeno do territorio.
+<br><br>A realización deste proxecto fundaméntase no valeiro existente de actividades alternativas nesta zona do rural, e na falla de espazos para o encontro; na procura da promoción e a cooperación cultural, a difusión e o espallamento da cultura das terras da Ulla en particular e da galega en xeral.
+<br><br>Ten por obxectivos:
+<br> - Promocionar alternativas socioculturais na comarca da Ulla.
+<br> - Favorecer o desenvolvemento comunitario e endóxeno do territorio, poñendo en valor o rural.
+<br> - Recuperar espazos para o encontro aproveitando ao máximo os recursos que ofrece a zona.
+<br> - Incentivar o espírito creativo, xerando actividades, obradoiros, espectáculos, mostras, concertos…
 <br><br>Ao longo da súa vida esta iniciativa sufriu unha evolución, dando lugar a diferentes cambios no formato, partindo sempre dunha análise de necesidades e das inquedanzas dos veciños e veciñas e membros da entidade.
 <br><br>Actualmente realízase na última fin de semana do mes de outubro. Durante estes dous días xérase un gran espazo aberto e de convivencia, fomentando o intercambio de experiencias entre os asistentes, e entre estes e mailos veciños/as da zona a través das diferentes actividades.
 <br><br>A actividades estrela é o “Pasabodeghas” que se celebra o sábado pola tarde; unha ruta gaiteira por  adegas-casas que se converten en espazos de gastronomía e cultura.
@@ -821,7 +891,40 @@ En definitiva, o "Pasabodeghas" busca que as persoas que asistan, descubran o se
     <!-- Video YouTube embebido responsive -->
     <div class="embed-container">
       <iframe
-        src="https://www.youtube.com/embed/AQTHsG6EAqw"
+        src="https://www.youtube.com/embed/an8Fv0_yRTE?si=P8iS3UUZilTW86mn"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <div class="embed-container">
+      <iframe
+        src="https://www.youtube.com/embed/K_fXUmfgglU?si=K4yHNxX16kvv68gW"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <div class="embed-container">
+      <iframe
+        src="https://www.youtube.com/embed/XO1NzyRijlE?si=vtmEDYflxpKd66GB"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <div class="embed-container">
+      <iframe
+        src="https://www.youtube.com/embed/AQTHsG6EAqw?si=a-VZoC9DMxK6NEWx"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -840,10 +943,11 @@ En definitiva, o "Pasabodeghas" busca que as persoas que asistan, descubran o se
             <p>
 Este ano celebramos un concurso de carteis para a elección do deseño do 2025 no cal participaron 10 traballos.
 <br><br>
-Finalmente resultou gañadora <strong>Patricia Riveira Laceiras</strong>, cun cartel que mostra o espirito do Pasabodeghas, e tamén das letras galegasque este ano foron adicadas a poesía popular oral, personificada nas cantareiras e pandeireteiras.
+Finalmente resultou gañadora <strong>Patricia Riveira Laceiras</strong>, cun cartel que mostra o espirito do Pasabodeghas, e tamén das letras galegas que este ano foron adicadas á poesía popular oral, personificada nas cantareiras e pandeireteiras.
 <br><br>
-Grazas a todas e todos por participar e por poñerlle tantas ganas e creatividade. Da gusto ver tanto talento.
+Grazas a todas e todos por participar e por poñerlle tantas gañas e creatividade. Da gusto ver tanto talento!
             </p>
+            <img src="images/logos/logo.webp" alt="Finalistas Concurso Cartel Pasabodeghas" style="width: 100%; height: auto; max-height: none; margin-top: 1rem;">
         </div>
                 <div class="about-images" style="display: flex; justify-content: center; align-items: center;">
             <img src="images/pasabodeghas_xeral_50x70.webp" alt="Cartel Xeral do Pasabodeghas" style="width: 100%; height: auto; max-height: none; margin: 0;">
@@ -859,10 +963,10 @@ Grazas a todas e todos por participar e por poñerlle tantas ganas e creatividad
     <!-- Contenedor para las imágenes -->
     <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
         <div style="flex: 1 1 400px; max-width: 600px;">
-            <img src="images/programa.webp" alt="Programa Xeral" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <img src="images/pasabodeguinhas.webp" alt="Programa Xeral" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
         </div>
         <div style="flex: 1 1 400px; max-width: 600px;">
-            <img src="images/pasabodeguinhas.webp" alt="Programa Pasabodeguinhas" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+            <img src="images/programa.webp" alt="Programa Pasabodeguinhas" style="width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
         </div>
     </div>
 
@@ -943,7 +1047,7 @@ Nesta edición acollemos aos compañeiros/as do Festival Castelo Conta; unha ini
           <img src="images/servicios/parking.webp" alt="Icono de aparcamento">
         </div>
         <h3 class="service-title">Aparcadoiro Gratuíto</h3>
-        <p class="service-description">Ampla zona de estacionamento sen custo para todos os asistentes</p>
+        <p class="service-description">Ampla zona de estacionamento sen custo para tod@s @s asistentes</p>
       </div>
 
       <!-- Zona acampada -->
@@ -1000,9 +1104,101 @@ Nesta edición acollemos aos compañeiros/as do Festival Castelo Conta; unha ini
         <p class="service-description">Pulpeiro, posto de bocadillos e bebidas no espazo de concertos</p>
       </div>
 
+      <!-- Puntos lila e arcoiris -->
+      <div class="service-item">
+        <div class="service-icon">
+          <img src="images/servicios/point.png" alt="Icono de comida">
+        </div>
+        <h3 class="service-title">Puntos lila e arcoiris</h3>
+        <p class="service-description">Espazo seguro contra a violencia de xénero e de apoio á diversidade LGTBI</p>
+      </div>
+
     </div>
   </section>
 
+    <!-- Sección Pack Pasabodeghas -->
+  <section id="cartel" class="about-section">
+    <h2 class="section-title">Pack Pasabodeghas</h2>
+    <div class="about-content">
+        <div class="about-text">
+            <p>
+Para acceder ao recinto débese adquirir o “Packs Pasabodeghas” (será un número limitado).
+<br><br>
+O “Pasabodeghas” non é gratis, o/a maior patrocinador/a  eres ti colaborando coa adquisión do “Pack Pasabodeghas” que che dará acceso ao recinto. Esta é a maneira de financiar un amplo programa de actividades, degustacións…
+<br><br>
+-	 “<strong>Pack Pasabodeghas xeral</strong>” (de 18 anos en diante): Inclúe: xerro de barro, degustación de viño, refrescos e tapa nas 10 adegas, ambiente festeiro con música tradicional, espectáculos, mostras, concertos…)
+<br><br>
+-	“<strong>Pack Pasabodeghas xuvenil</strong>”( de 12 a 17 anos): Inclúe: xerro de barro, degustación de refrescos e tapa nas 10 adegas, ambiente festeiro con música tradicional, espectáculos, mostras, concertos…).
+Os menores de 18 anos non poderán consumir bebidas alcohólicas.
+<br><br>
+-	Os/as menores de 12 anos poderán acceder ao recinto de forma libre, pero precisan vir acompañados/as dun adulto responsable para poder entrar.
+De forma opcional poden adquirir o “<strong>Pack Infantil</strong>”: Inclúe: un xerro infantil, lambetadas, degustación de refrescos…e moito máis.
+            </p>
+        </div>
+                <div class="about-images" style="display: flex; justify-content: center; align-items: center;">
+            <img src="images/PackPasabodeghas.jpeg" alt="Cartel Xeral do Pasabodeghas" style="width: 100%; height: auto; max-height: none; margin: 0;">
+        </div>
+    </div>
+  </section>
+
+
+    <!-- Sección Bus Pasabodeghas -->
+  <section id="cartel" class="about-section">
+    <h2 class="section-title">Pasabodeghas Bus</h2>
+    <div class="about-content">
+        <div class="about-text">
+            <p>
+1-	<strong>BUS DE IDA E VOLTA DENDE SANTIAGO</strong>:
+<br>Orixe (ida): Parada bus Corte Inglés (16:00 h.)
+<br>Orixe (volta): Casa de Cultura de San Miguel de Sarandón (2:30 h. /hora nova)
+<br><br>
+2-	<strong>BUS DE IDA E VOLTA DENDE A ESTRADA</strong>:
+<br>Orixe (ida): Restaurante Río Liñares (16:00 h.), Casa do Concello da Estrada (16:15 h.)
+<br>Orixe (volta): Casa de Cultura de San Miguel de Sarandón (2:30 h. /hora nova)
+
+            </p>
+<!--         </div>
+                <div class="about-images" style="display: flex; justify-content: center; align-items: center;">
+            <img src="images/pasabodeghas_xeral_50x70.webp" alt="Cartel Xeral do Pasabodeghas" style="width: 100%; height: auto; max-height: none; margin: 0;">
+        </div> -->
+    </div>
+  </section>
+
+  <!-- Sección Sitios de compra -->
+  <section id="cartel" class="about-section">
+    <h2 class="section-title">Podes adquirir o Pack Pasabodeghas e os tickets de bus en:</h2>
+    <div class="about-content">
+        <div class="about-text">
+            <p>
+( A partir das 19:00 h. do 3 de outubro)
+<br><br>
+<strong>VEDRA</strong>:
+<br>CENTRO COMERCIAL GARCÍA&GARCÍA
+<br>CAFÉ BAR DERBY
+<br>TABERNA O PATIO DE MÓNICA
+<br>CAFÉ BAR A DORNA
+<br><br>
+<strong>BOQUEIXÓN</strong>:
+<br>LIBRERÍA LINO
+<br><br>
+<strong>TEO</strong>:
+<br>CASA PERNAS
+<br><br>
+<strong>SANTIAGO</strong>:
+<br>NOZZEO + BUS DENDE SANTIAGO
+<br>VIÑOTECA VENTOSELA + BUS DENDE SANTIAGO
+<br>VIÑOTELA A TIXOLA + BUS DENDE SANTIAGO
+<br><br>
+<strong>A ESTRADA</strong>:
+<br>A RIALA + BUS DENDE A ESTRADA
+<br>HAMBURGUESERÍA FLORIDA
+<br>RESTAURANTE RÍO LIÑARES + BUS DENDE A ESTRADA
+<br><br>
+<strong>LALÍN</strong>:
+<br>A TABERNA DO VENTO
+
+            </p>
+  </section>
 
   <!-- Photos -->
     </div>
@@ -1066,6 +1262,16 @@ Inclúe xerro de barro, pulseira, degustación de bebidas e tapas, ambiente fest
     </div>
   </section>
 
+  <section id=":davila">
+    <div class="foto">
+      <img src="images/ViñetaDavila.webp" alt="Davila">
+    </div>
+    <p>
+Participando, apoiando, compartindo, colaborando, construíndo, …poderemos dicir…
+<br><br>
+Pasabodeghas…e o millo?...sen apañar!
+    </p>
+  </section>
   <!-- Footer -->
   <footer>
     <div class="footer-container">
@@ -1073,8 +1279,8 @@ Inclúe xerro de barro, pulseira, degustación de bebidas e tapas, ambiente fest
         <div class="footer-group">
           <p class="footer-title">Organizan</p>
           <div class="footer-logos">
-            <img src="images/logos/ACSanCampio.webp" alt="Logo AC San Campio" class="logo-extra">
-              <img src="images/logos/RequintaDaLaxeira.webp" alt="Logo Requinta da Laxeira" class="logo-extra">
+            <img src="images/logos/SanCampio.png" alt="Logo AC San Campio" class="logo-extra">
+            <img src="images/logos/RequintaDaLaxeira.png" alt="Logo Requinta da Laxeira" class="logo-extra">
           </div>
         </div>
 
@@ -1082,9 +1288,9 @@ Inclúe xerro de barro, pulseira, degustación de bebidas e tapas, ambiente fest
         <div class="footer-group">
           <p class="footer-title">Colaboran</p>
           <div class="footer-logos">
-              <img src="images/logos/ConcelloDeVedra.webp" alt="Logo Concello de Vedra" class="logo-extra">
-              <img src="images/logos/DeputacionDaCoruña.webp" alt="Logo Deputación da Coruña" class="logo-extra">
-              <img src="images/logos/XuntaDeGalicia.webp" alt="Logo Xunta de Galicia" class="logo-extra">
+              <img src="images/logos/ConcelloDeVedra.png" alt="Logo Concello de Vedra" class="logo-extra">
+              <img src="images/logos/DeputacionDaCoruña.png" alt="Logo Deputación da Coruña" class="logo-extra">
+              <img src="images/logos/XuntaDeGalicia.png" alt="Logo Xunta de Galicia" class="logo-extra">
           </div>
         </div>
     </div>
