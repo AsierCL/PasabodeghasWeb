@@ -194,12 +194,35 @@ background: #fff;
 
 .about-content {
 display: flex;
-align-items: center;
+align-items: flex-start;
 justify-content: center;
 gap: 2rem;
 max-width: 1100px;
 margin: 0 auto;
 flex-wrap: wrap;
+}
+
+.about-images {
+flex: 1 1 350px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 100%;
+min-height: 100%;
+}
+
+.about-images img {
+width: 100%;
+height: calc((100% - 2rem) / 3);
+min-height: 150px;
+object-fit: cover;
+border-radius: 8px;
+transition: transform 0.3s ease;
+margin-bottom: 1rem;
+}
+
+.about-images img:hover {
+transform: scale(1.02);
 }
 
 .section-title {
@@ -651,7 +674,11 @@ O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. N
 <br><br>En definitiva, este proxecto interxeracional busca un uso activo e creativo do lecer da poboación xeral (nenos/as, mocidade, persoas adultas e maiores) ao tempo que pon en valor as manifestacións culturais galegas como parte do noso patrimonio cultural.
             </p>
         </div>
-    <img src="images/Description.webp" alt="Imagen historia">
+        <div class="about-images">
+            <img src="images/espazoactivo/Foto1PresentacionEspazoActivo.jpg" alt="Espazo Activo 1">
+            <img src="images/espazoactivo/Foto2PresentacionEspazoActivo.jpg" alt="Espazo Activo 2">
+            <img src="images/espazoactivo/Foto3PresentacionEspazoActivo.jpg" alt="Espazo Activo 3">
+        </div>
     <!-- Video YouTube embebido responsive -->
     <div class="embed-container">
       <iframe
