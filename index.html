@@ -114,7 +114,21 @@ header::before {
 }
 .logo { display: flex; align-items: center; z-index: 1; }
 .logo img { width: 40px; height: 40px; margin-right: 0.5rem; }
-.social-icons a { margin-left: 0.5rem; z-index: 1; }
+.social-icons a {
+  margin-left: 0.5rem;
+  z-index: 1;
+  opacity: 1 !important;   /* fuerza opacidad total */
+  filter: none !important; /* elimina posibles filtros que atenúen */
+}
+
+header h1 {
+  position: relative;   /* asegura que quede por encima del fondo */
+  z-index: 2;           /* más alto que el ::before */
+  color: #000;          /* negro sólido (puedes cambiar a blanco #fff si prefieres) */
+  font-size: 2rem;      /* aumenta el tamaño (ajústalo a tu gusto, por ejemplo 2.5rem o 3rem) */
+  font-weight: bold;    /* más marcado */
+  opacity: 1;           /* asegura opacidad total */
+}
 
 nav { background: #333; color: #fff; }
 .nav-container {
@@ -1000,34 +1014,34 @@ Nesta edición acollemos aos compañeiros/as do Festival Castelo Conta; unha ini
   <section id="concertos">
     <h2 class="section-title">Concertos</h2>
     <div class="concerts-grid">
-      <article class="concert-card" data-band="heredeiros">
-        <img src="images/grupos/HeredeirosDaCrus.webp" alt="Heredeiros da Crús">
+      <article class="concert-card" data-band="A Requinta da Laxeira">
+        <img src="images/grupos/Requinta.jpg" alt="A Requinta da Laxeira">
         <div class="card-content">
-          <h3>HEREDEIROS DA CRUS</h3>
+          <h3>A REQUINTA DA LAXEIRA</h3>
           <audio controls>
-            <source src="EuQueroJosar.mp3" type="audio/mpeg">
+            <source src="./audios/Requinta.mp3" type="audio/mpeg">
             O teu navegador non soporta o elemento de audio.
           </audio>
         </div>
       </article>
 
-      <article class="concert-card" data-band="lamatumba">
-        <img src="images/grupos/Lamatumba.webp" alt="Lamatumba">
+      <article class="concert-card" data-band="ses">
+        <img src="images/grupos/Ses.jpg" alt="Ses">
         <div class="card-content">
-          <h3>LAMATUMBA</h3>
+          <h3>SES</h3>
           <audio controls>
-            <source src="LicorKafe.mp3" type="audio/mpeg">
+            <source src="./audios/Ses.mp3" type="audio/mpeg">
             O teu navegador non soporta o elemento de audio.
           </audio>
         </div>
       </article>
 
-      <article class="concert-card" data-band="lamatumba">
-        <img src="images/grupos/Lamatumba.webp" alt="Lamatumba">
+      <article class="concert-card" data-band="Bravú Xangai">
+        <img src="images/grupos/Xangai.jpg" alt="Bravú Xangai">
         <div class="card-content">
-          <h3>LAMATUMBA</h3>
+          <h3>ORQUESTRA BRAVÚ XANGAI</h3>
           <audio controls>
-            <source src="LicorKafe.mp3" type="audio/mpeg">
+            <source src="./audios/Xangai.mp3" type="audio/mpeg">
             O teu navegador non soporta o elemento de audio.
           </audio>
         </div>
