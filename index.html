@@ -249,6 +249,45 @@ height: auto;
 border-radius: 12px;
 }
 
+/* Lista de características */
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.features-list h4 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.features-list h4::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #007bff;
+  margin-top: 0.5rem;
+}
+
+.features-list li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.features-list li::before {
+  content: '•';
+  color: #007bff;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0.5rem;
+  top: -0.2rem;
+}
+
 /* Servicios */
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
 .service-item {
@@ -691,7 +730,7 @@ O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. N
   <div class="hero">
     <img src="images/pasabodeghas/FondoTituloSeccionPasabodeghas.jpg" alt="Pasabodeghas Festival">
     <div class="overlay">
-      <h2>ESPAZO ACTIVO DA ULLA</h2>
+      <h2>PASABODEGHAS</h2>
     </div>
   </div>
 
@@ -700,16 +739,26 @@ O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. N
     <div class="about-content">
         <div class="about-text">
             <p>
-O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. Nace no seo da Asociación Cultural San Campio no ano 2001 a partir de contactos persoais entre membros de asociacións.
-<br><br>A realización deste proxecto fundaméntase no valeiro existente de actividades alternativas nesta zona do rural, e na falla de espazos para o encontro; na procura da promoción e a cooperación cultural, a difusión e o espallamento da cultura das terras da Ulla en particular e da galega en xeral; potenciando o desenvolvemento comunitario e endóxeno do territorio.
-<br><br>Ao longo da súa vida esta iniciativa sufriu unha evolución, dando lugar a diferentes cambios no formato, partindo sempre dunha análise de necesidades e das inquedanzas dos veciños e veciñas e membros da entidade.
-<br><br>Actualmente realízase na última fin de semana do mes de outubro. Durante estes dous días xérase un gran espazo aberto e de convivencia, fomentando o intercambio de experiencias entre os asistentes, e entre estes e mailos veciños/as da zona a través das diferentes actividades.
-<br><br>A actividades estrela é o "Pasabodeghas" que se celebra o sábado pola tarde; unha ruta gaiteira por  adegas-casas que se converten en espazos de gastronomía e cultura.
-<br><br>Pola noite no espazo "Festexarte" teñen lugar os concertos de grupos de música folk, ska, rock...
-<br><br>O domingo celébrase unha foliada con sesión vermú e tapeo.
-<br><br>A nivel xeral, hai un bo nivel de participación e implicación. Cóntase coa colaboración de diferentes axentes comunitarios (asociacións, grupos musicais, empresas, organismos públicos)… e tamén de particulares.
-<br><br>En definitiva, este proxecto interxeracional busca un uso activo e creativo do lecer da poboación xeral (nenos/as, mocidade, persoas adultas e maiores) ao tempo que pon en valor as manifestacións culturais galegas como parte do noso patrimonio cultural.
+O "Pasabodeghas" é unha experiencia para desfrutar xente de tódalas idades;  dende a cativada, pasando pola mocidade…e ata as persoas maiores.
+<br><br>
+Ten por obxectivo recuperar espazos para o encontro aproveitando ao máximo os recursos que ofrece a zona (adegas, eiras, camiños… viños, tapas…). Nos diferentes espazos encóntranse obradoiros, xogos populares, exposicións, postos de artesanía, produtos da terra,  espectáculos de teatro, circo, animación, grupos de música tradicional, espazos de expresión e creación…
+<br><br>
+Nesta andaina comunitaria están implicados/as un amplo abano de colaboradores/as: adegueiros/as, veciños/as, grupos de música tradicional, voluntarios/as, as persoas que ceden exposicións, patrocinadores/as, o Concello de Vedra, a Deputación da Coruña, a Xunta de Galicia, os medios de comunicación…e ti…festeiro/a .
+<br><br>
+En definitiva, o "Pasabodeghas" busca que as persoas que asistan, descubran o sentir da aldea, coñezan as tradicións, os costumes, a gastronomía, a música e as súas xentes.
             </p>
+            <ul class="features-list">
+                <h4>Qué te vas atopar?</h4>
+                <li>Espazo Infantil, con obradoiros e espectáculos, apto para tódolos públicos e para desfrutar en familia</li>
+                <li>Espazo xove, con información xuvenil e actividades dinámicas</li>
+                <li>Espazo de xogos populares para recuperar as tradicións</li>
+                <li>Postos de artesanía con produtos locais</li>
+                <li>Exposicións culturais distribuídas nas 9 adegas</li>
+                <li>Música tradicional ao longo da tarde en diferentes espazos</li>
+                <li>Viva da terra: Mostra de produtos autóctonos</li>
+                <li>A famosa subida "ghaiteira" dende o cruce da Pedreira, rematando cun espectáculo nocturno</li>
+                <li>Concertos de música folk e tradicional</li>
+            </ul>
         </div>
         <div class="about-images">
             <img src="images/pasabodeghas/Foto1Pasabodeghas.jpg" alt="Espazo Activo 1">
@@ -731,18 +780,16 @@ O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. N
   </section>
 
   <!-- Sección Cartel Xeral -->
-  <section id="cartelXeral" class="about-section">
+  <section id="cartel" class="about-section">
     <h2 class="section-title">Cartel do Festival</h2>
     <div class="about-content">
         <div class="about-text">
             <p>
-O Pasabodeghas é un festival único que celebra a cultura, música e gastronomía galega dunha maneira moi especial. Nesta fin de semana tan especial, as adegas-casas da zona ábrense para acoller aos visitantes nunha ruta gaiteira chea de sabor e tradición.
+Este ano celebramos un concurso de carteis para a elección do deseño do 2025 no cal participaron 10 traballos.
 <br><br>
-Durante o sábado pola tarde, os participantes poderán desfrutar dunha ruta única por diferentes adegas, onde poderán degustar os mellores produtos da terra mentres escoitan a música tradicional galega.
+Finalmente resultou gañadora <strong>Patricia Riveira Laceiras</strong>, cun cartel que mostra o espirito do Pasabodeghas, e tamén das letras galegasque este ano foron adicadas a poesía popular oral, personificada nas cantareiras e pandeireteiras.
 <br><br>
-Pola noite, o festival continúa co "Festexarte", onde os mellores grupos de música folk, ska e rock poñen o ritmo á noite. E o domingo, a festa remata cunha gran foliada acompañada dunha sesión vermú e tapeo.
-<br><br>
-Non perdas a oportunidade de vivir esta experiencia única que combina o mellor da nosa terra: música, gastronomía e cultura.
+Grazas a todas e todos por participar e por poñerlle tantas ganas e creatividade. Da gusto ver tanto talento.
             </p>
         </div>
                 <div class="about-images" style="display: flex; justify-content: center; align-items: center;">
@@ -771,7 +818,7 @@ Non perdas a oportunidade de vivir esta experiencia única que combina o mellor 
         <div class="about-text">
             <h3 style="margin-bottom: 1rem; color: #333;">CENTRO DE INTERESE: “COIDADO DA TERRA”</h3>
             <p>
-O Coidado da Terra será o centro de interese nesta edición, xa que todas as persoas temos a responsabilidade de protexer e respectar o noso planeta, garantindo un futuro sostible para as vindeiras xeracións.
+O <strong>Coidado da Terra</strong> será o centro de interese nesta edición, xa que todas as persoas temos a responsabilidade de protexer e respectar o noso planeta, garantindo un futuro sostible para as vindeiras xeracións.
 <br><br>
 A Terra está a sufrir os efectos do cambio climático, da deforestación e da contaminación entre outros. Se non actuamos, periga a saúde do planeta e tamén a nosa.
 <br><br>
@@ -793,8 +840,8 @@ Nesta edición acollemos aos compañeiros/as do Festival Castelo Conta; unha ini
 
 
   <!-- Concertos -->
-  <section id="concerts">
-    <h2 class="section-title">Grupos Confirmados</h2>
+  <section id="concertos">
+    <h2 class="section-title">Concertos</h2>
     <div class="concerts-grid">
       <article class="concert-card" data-band="heredeiros">
         <img src="images/grupos/HeredeirosDaCrus.jpg" alt="Heredeiros da Crús">
