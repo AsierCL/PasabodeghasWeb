@@ -289,14 +289,64 @@ border-radius: 12px;
 }
 
 /* Servicios */
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; }
+.services-section {
+  background-color: #f9f9f9;
+  padding: 4rem 1rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .service-item {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-/* para dar algo de espacio interior */
-padding: 1rem 0;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  width: 64px;
+  height: 64px;
+  background-color: #007bff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.service-icon img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.service-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0.5rem 0;
+}
+
+.service-description {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 /* Programación */
@@ -875,6 +925,78 @@ Nesta edición acollemos aos compañeiros/as do Festival Castelo Conta; unha ini
           </audio>
         </div>
       </article>
+    </div>
+  </section>
+
+
+  <!-- Servizos -->
+  <section id="servizos" class="services-section">
+    <h2 class="section-title">Servizos</h2>
+    <div class="services-grid">
+
+      <!-- Aparcadoiro -->
+      <div class="service-item">
+        <div class="service-icon">
+          <img src="images/servicios/parking.png" alt="Icono de aparcamento">
+        </div>
+        <h3 class="service-title">Aparcadoiro Gratuíto</h3>
+        <p class="service-description">Ampla zona de estacionamento sen custo para todos os asistentes</p>
+      </div>
+
+      <!-- Zona acampada -->
+      <div class="service-item">
+        <div class="service-icon">
+          <img src="images/servicios/camp.png" alt="Icono de acampada">
+        </div>
+        <h3 class="service-title">Zona de Acampada</h3>
+        <p class="service-description">Espazo habilitado para tendas de campaña e autocaravanas</p>
+      </div>
+
+      <!-- Baños -->
+      <div class="service-item">
+        <div class="service-icon">
+          <img src="images/servicios/wc.png" alt="Icono de baños">
+        </div>
+        <h3 class="service-title">Baños Portátiles</h3>
+        <p class="service-description">Servizos hixiénicos distribuídos por todo o recinto</p>
+      </div>
+
+      <!-- Asistencia sanitaria -->
+      <div class="service-item">
+        <div class="service-icon">
+          <img src="images/servicios/healt.png" alt="Icono de asistencia sanitaria">
+        </div>
+        <h3 class="service-title">Asistencia Sanitaria</h3>
+        <p class="service-description">Equipo médico e ambulancia durante todo o evento</p>
+      </div>
+
+      <!-- Seguros -->
+      <div class="service-item">
+        <div class="service-icon">
+          <img src="images/servicios/insurance.png" alt="Icono de seguros">
+        </div>
+        <h3 class="service-title">Seguros</h3>
+        <p class="service-description">Cobertura completa para garantir a seguridade do evento</p>
+      </div>
+
+      <!-- Tren -->
+      <div class="service-item">
+        <div class="service-icon">
+          <img src="images/servicios/train.png" alt="Icono de tren">
+        </div>
+        <h3 class="service-title">Trens Turísticos</h3>
+        <p class="service-description">Transporte entre adegas para unha mellor experiencia</p>
+      </div>
+
+      <!-- Gastronomía -->
+      <div class="service-item">
+        <div class="service-icon">
+          <img src="images/servicios/food.png" alt="Icono de comida">
+        </div>
+        <h3 class="service-title">Zona Gastronómica</h3>
+        <p class="service-description">Pulpeiro, posto de bocadillos e bebidas no espazo de concertos</p>
+      </div>
+
     </div>
   </section>
 
