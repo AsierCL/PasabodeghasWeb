@@ -815,9 +815,9 @@ footer {
         <a href="#cartel">Cartel</a>
         <a href="#programa">Programa</a>
         <a href="#concertos">Concertos</a>
+        <a href="#servizos">Servizos</a>
         <a href="#packpasabodeghas">Pack Pasbodeghas</a>
         <a href="#bus">Pasbodeghas Bus</a>
-        <a href="#servizos">Servizos</a>
         <a href="#photos">Imaxes</a>
         <a href="#faq">Preguntas</a>
         <a href="#location">Ubicación</a>
@@ -833,7 +833,7 @@ footer {
            height="1080"
            fetchpriority="high">
       <div class="overlay">
-        <h1>ESPAZO ACTIVO DA ULLA</h1>
+        <h2 style="font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; letter-spacing: 2px; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">ESPAZO ACTIVO DA ULLA</h2>
       </div>
     </div>  <!-- Sobre EspazoAcrivo-->
   <section id="espazoactivo" class="about-section">
@@ -867,7 +867,7 @@ O Espazo Activo da Ulla é un espazo de cultura, encontro, lecer e animación. N
   <div class="hero">
     <img src="images/pasabodeghas/FondoTituloSeccionPasabodeghas.webp" alt="Pasabodeghas Festival">
     <div class="overlay">
-      <h2>PASABODEGHAS</h2>
+      <h2 style="font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; letter-spacing: 2px; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">PASABODEGHAS</h2>
     </div>
   </div>
 
@@ -952,20 +952,32 @@ En definitiva, o "Pasabodeghas" busca que as persoas que asistan, descubran o se
   <!-- Sección Cartel Xeral -->
   <section id="cartel" class="about-section">
     <h2 class="section-title">Cartel do Festival</h2>
-    <div class="about-content">
-        <div class="about-text">
-            <p>
-Este ano celebramos un concurso de carteis para a elección do deseño do 2025 no cal participaron 10 traballos.
-<br><br>
-Finalmente resultou gañadora <strong>Patricia Riveira Laceiras</strong>, cun cartel que mostra o espirito do Pasabodeghas, e tamén das letras galegas que este ano foron adicadas á poesía popular oral, personificada nas cantareiras e pandeireteiras.
-<br><br>
-Grazas a todas e todos por participar e por poñerlle tantas gañas e creatividade. Da gusto ver tanto talento!
+    <div class="about-content" style="align-items: stretch; gap: 2rem; flex-wrap: wrap;">
+      <div class="about-text" style="flex: 1 1 300px; display: flex; flex-direction: column; justify-content: space-between; background-color: #f9f9f9; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <div>
+          <h3 style="color: #333; margin-bottom: 1.5rem; font-size: 1.5rem;">Concurso de Carteis 2025</h3>
+          <p style="font-size: 1.1rem; line-height: 1.6;">
+            Este ano celebramos un concurso de carteis para a elección do deseño do 2025 no cal participaron <strong>10 traballos</strong>.
+          </p>
+          <div style="margin: 2rem 0; padding: 1.5rem; background-color: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+            <h4 style="color: #444; margin-bottom: 1rem;">Gañadora do Concurso</h4>
+            <p style="font-size: 1.2rem; color: #333;"><strong>Patricia Riveira Laceiras</strong></p>
+            <p style="margin-top: 1rem;">
+              Un cartel que mostra o espirito do Pasabodeghas, e tamén das letras galegas que este ano foron adicadas á poesía popular oral, personificada nas cantareiras e pandeireteiras.
             </p>
-            <img src="images/logos/logo.webp" alt="Finalistas Concurso Cartel Pasabodeghas" style="width: 100%; height: auto; max-height: none; margin-top: 1rem;">
+          </div>
+          <p style="font-size: 1.1rem; color: #666; margin-top: 2rem;">
+            Grazas a todas e todos por participar e por poñerlle tantas gañas e creatividade. Da gusto ver tanto talento!
+          </p>
         </div>
-                <div class="about-images" style="display: flex; justify-content: center; align-items: center;">
-            <img src="images/pasabodeghas_xeral_50x70.webp" alt="Cartel Xeral do Pasabodeghas" style="width: 100%; height: auto; max-height: none; margin: 0;">
-        </div>
+      </div>
+      <div class="about-images" style="flex: 1; display: flex; justify-content: center; align-items: center; padding: 2rem;">
+        <img src="images/pasabodeghas_xeral_50x70.webp"
+             alt="Cartel Xeral do Pasabodeghas"
+             style="width: 100%; max-width: 400px; height: auto; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: transform 0.3s ease;"
+             onmouseover="this.style.transform='scale(1.02)'"
+             onmouseout="this.style.transform='scale(1)'">
+      </div>
     </div>
   </section>
 
@@ -1131,7 +1143,7 @@ Nesta edición acollemos aos compañeiros/as do Festival Castelo Conta; unha ini
   </section>
 
     <!-- Sección Pack Pasabodeghas -->
-  <section id="cartel" class="about-section">
+  <section id="packpasabodeghas" class="about-section">
     <h2 class="section-title">Pack Pasabodeghas</h2>
     <div class="about-content">
         <div class="about-text">
@@ -1157,59 +1169,79 @@ De forma opcional poden adquirir o “<strong>Pack Infantil</strong>”: Inclúe
 
 
     <!-- Sección Bus Pasabodeghas -->
-  <section id="cartel" class="about-section">
+  <section id="bus" class="about-section">
     <h2 class="section-title">Pasabodeghas Bus</h2>
-    <div class="about-content">
-        <div class="about-text">
-            <p>
-1-	<strong>BUS DE IDA E VOLTA DENDE SANTIAGO</strong>:
-<br>Orixe (ida): Parada bus Corte Inglés (16:00 h.)
-<br>Orixe (volta): Casa de Cultura de San Miguel de Sarandón (2:30 h. /hora nova)
-<br><br>
-2-	<strong>BUS DE IDA E VOLTA DENDE A ESTRADA</strong>:
-<br>Orixe (ida): Restaurante Río Liñares (16:00 h.), Casa do Concello da Estrada (16:15 h.)
-<br>Orixe (volta): Casa de Cultura de San Miguel de Sarandón (2:30 h. /hora nova)
-
-            </p>
-<!--         </div>
-                <div class="about-images" style="display: flex; justify-content: center; align-items: center;">
-            <img src="images/pasabodeghas_xeral_50x70.webp" alt="Cartel Xeral do Pasabodeghas" style="width: 100%; height: auto; max-height: none; margin: 0;">
-        </div> -->
+    <div class="about-content" style="justify-content: space-evenly; gap: 12rem;">
+      <div class="about-text" style="flex: 0 1 300px;">
+        <h3 style="margin-bottom: 0.5rem;">BUS DE IDA E VOLTA DENDE SANTIAGO</h3>
+        <ul style="list-style: none; padding-left: 0;">
+          <li><strong>Orixe (ida):</strong> Parada bus Corte Inglés (16:00 h.)</li>
+          <li><strong>Orixe (volta):</strong> Casa de Cultura de San Miguel de Sarandón (2:30 h. /hora nova)</li>
+        </ul>
+      </div>
+      <div class="about-text" style="flex: 0 1 300px;">
+        <h3 style="margin-bottom: 0.5rem;">BUS DE IDA E VOLTA DENDE A ESTRADA</h3>
+        <ul style="list-style: none; padding-left: 0;">
+          <li><strong>Orixe (ida):</strong> Restaurante Río Liñares (16:00 h.), Casa do Concello da Estrada (16:15 h.)</li>
+          <li><strong>Orixe (volta):</strong> Casa de Cultura de San Miguel de Sarandón (2:30 h. /hora nova)</li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <!-- Sección Sitios de compra -->
   <section id="cartel" class="about-section">
     <h2 class="section-title">Podes adquirir o Pack Pasabodeghas e os tickets de bus en:</h2>
-    <div class="about-content">
-        <div class="about-text">
-            <p>
-( A partir das 19:00 h. do 3 de outubro)
-<br><br>
-<strong>VEDRA</strong>:
-<br>CENTRO COMERCIAL GARCÍA&GARCÍA
-<br>CAFÉ BAR DERBY
-<br>TABERNA O PATIO DE MÓNICA
-<br>CAFÉ BAR A DORNA
-<br><br>
-<strong>BOQUEIXÓN</strong>:
-<br>LIBRERÍA LINO
-<br><br>
-<strong>TEO</strong>:
-<br>CASA PERNAS
-<br><br>
-<strong>SANTIAGO</strong>:
-<br>NOZZEO + BUS DENDE SANTIAGO
-<br>VIÑOTECA VENTOSELA + BUS DENDE SANTIAGO
-<br>VIÑOTELA A TIXOLA + BUS DENDE SANTIAGO
-<br><br>
-<strong>A ESTRADA</strong>:
-<br>A RIALA + BUS DENDE A ESTRADA
-<br>HAMBURGUESERÍA FLORIDA
-<br>RESTAURANTE RÍO LIÑARES + BUS DENDE A ESTRADA
-<br><br>
-<strong>LALÍN</strong>:
-<br>A TABERNA DO VENTO
+    <p style="text-align: center; margin-bottom: 2rem;">( A partir das 19:00 h. do 3 de outubro)</p>
+    <div class="about-content" style="justify-content: space-evenly; gap: 12rem;">
+      <div class="about-text" style="flex: 0 1 300px;">
+        <div style="margin-bottom: 2rem;">
+          <h3 style="margin-bottom: 0.5rem;"><strong>VEDRA</strong></h3>
+          <ul style="list-style: none; padding-left: 0; white-space: nowrap;">
+            <li style="margin-bottom: 0.3rem;">CENTRO COMERCIAL GARCÍA&GARCÍA</li>
+            <li style="margin-bottom: 0.3rem;">CAFÉ BAR DERBY</li>
+            <li style="margin-bottom: 0.3rem;">TABERNA O PATIO DE MÓNICA</li>
+            <li>CAFÉ BAR A DORNA</li>
+          </ul>
+        </div>
+        <div style="margin-bottom: 2rem;">
+          <h3 style="margin-bottom: 0.5rem;"><strong>BOQUEIXÓN</strong></h3>
+          <ul style="list-style: none; padding-left: 0; white-space: nowrap;">
+            <li>LIBRERÍA LINO</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="margin-bottom: 0.5rem;"><strong>TEO</strong></h3>
+          <ul style="list-style: none; padding-left: 0; white-space: nowrap;">
+            <li>CASA PERNAS</li>
+          </ul>
+        </div>
+      </div>
+      <div class="about-text" style="flex: 0 1 300px;">
+        <div style="margin-bottom: 2rem;">
+          <h3 style="margin-bottom: 0.5rem;"><strong>SANTIAGO</strong></h3>
+          <ul style="list-style: none; padding-left: 0; white-space: nowrap;">
+            <li style="margin-bottom: 0.3rem;">NOZZEO + BUS DENDE SANTIAGO</li>
+            <li style="margin-bottom: 0.3rem;">VIÑOTECA VENTOSELA + BUS DENDE SANTIAGO</li>
+            <li>VIÑOTELA A TIXOLA + BUS DENDE SANTIAGO</li>
+          </ul>
+        </div>
+        <div style="margin-bottom: 2rem;">
+          <h3 style="margin-bottom: 0.5rem;"><strong>A ESTRADA</strong></h3>
+          <ul style="list-style: none; padding-left: 0; white-space: nowrap;">
+            <li style="margin-bottom: 0.3rem;">A RIALA + BUS DENDE A ESTRADA</li>
+            <li style="margin-bottom: 0.3rem;">HAMBURGUESERÍA FLORIDA</li>
+            <li>RESTAURANTE RÍO LIÑARES + BUS DENDE A ESTRADA</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="margin-bottom: 0.5rem;"><strong>LALÍN</strong></h3>
+          <ul style="list-style: none; padding-left: 0; white-space: nowrap;">
+            <li>A TABERNA DO VENTO</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
             </p>
   </section>
@@ -1276,40 +1308,41 @@ Inclúe xerro de barro, pulseira, degustación de bebidas e tapas, ambiente fest
     </div>
   </section>
 
-  <section id=":davila">
-    <div class="foto">
+  <section id=":davila" style="text-align: center; padding: 4rem 1rem;">
+    <div class="foto" style="margin-bottom: 3rem;">
       <img src="images/ViñetaDavila.webp" alt="Davila">
     </div>
-    <p>
-Participando, apoiando, compartindo, colaborando, construíndo, …poderemos dicir…
-<br><br>
-Pasabodeghas…e o millo?...sen apañar!
+    <p style="font-size: 1.2rem;">
+      Participando, apoiando, compartindo, colaborando, construíndo, …poderemos dicir…
+    </p>
+    <p style="font-size: 2rem; font-weight: bold; margin-top: 2rem; color: #333;">
+      Pasabodeghas…e o millo?...sen apañar!
     </p>
   </section>
   <!-- Footer -->
-  <footer>
-    <div class="footer-container">
+  <footer style="padding: 2rem;">
+    <div class="footer-container" style="max-width: 1200px; margin: 0 auto;">
         <!-- Organizan -->
-        <div class="footer-group">
-          <p class="footer-title">Organizan</p>
-          <div class="footer-logos">
-            <img src="images/logos/SanCampio.png" alt="Logo AC San Campio" class="logo-extra">
-            <img src="images/logos/RequintaDaLaxeira.png" alt="Logo Requinta da Laxeira" class="logo-extra">
+        <div class="footer-group" style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+          <p class="footer-title" style="font-size: 1.2rem; margin: 0; min-width: 120px;">Organizan:</p>
+          <div class="footer-logos" style="display: flex; gap: 3rem; flex-wrap: wrap; justify-content: center; align-items: center;">
+            <img src="images/logos/SanCampio.png" alt="Logo AC San Campio" style="height: 80px; width: auto;">
+            <img src="images/logos/RequintaDaLaxeira.png" alt="Logo Requinta da Laxeira" style="height: 80px; width: auto;">
           </div>
         </div>
 
         <!-- Colaboran -->
-        <div class="footer-group">
-          <p class="footer-title">Colaboran</p>
-          <div class="footer-logos">
-              <img src="images/logos/ConcelloDeVedra.png" alt="Logo Concello de Vedra" class="logo-extra">
-              <img src="images/logos/DeputacionDaCoruña.png" alt="Logo Deputación da Coruña" class="logo-extra">
-              <img src="images/logos/XuntaDeGalicia.png" alt="Logo Xunta de Galicia" class="logo-extra">
+        <div class="footer-group" style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+          <p class="footer-title" style="font-size: 1.2rem; margin: 0; min-width: 120px;">Colaboran:</p>
+          <div class="footer-logos" style="display: flex; gap: 3rem; flex-wrap: wrap; justify-content: center; align-items: center;">
+            <img src="images/logos/ConcelloDeVedra.png" alt="Logo Concello de Vedra" style="height: 80px; width: auto;">
+            <img src="images/logos/DeputacionDaCoruña.png" alt="Logo Deputación da Coruña" style="height: 80px; width: auto;">
+            <img src="images/logos/XuntaDeGalicia.png" alt="Logo Xunta de Galicia" style="height: 80px; width: auto;">
           </div>
         </div>
     </div>
 
-    <p class="footer-copy">&copy; 2025 Pasabodeghas | Dev by AsierCL.</p>
+    <p class="footer-copy" style="text-align: center; margin-top: 2rem;">&copy; 2025 Pasabodeghas | Dev by AsierCL.</p>
   </footer>
 </main>
 
