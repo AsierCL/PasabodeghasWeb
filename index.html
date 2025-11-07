@@ -85,14 +85,122 @@
   </script>
 </head>
 <style>
-/* Reset e estilos básicos */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: Arial, sans-serif; line-height: 1.5; color: #333; }
-a { text-decoration: none; color: inherit; }
-img { max-width: 100%; height: auto; display: block; }
-main { display: block; } /* For older browsers */
-article, aside, footer, header, nav, section { display: block; }
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: #333;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+main {
+  display: block;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+article, aside, footer, header, nav, section {
+  display: block;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section-spacing {
+  padding: 3rem 1rem;
+}
+
+.section-bg-white {
+  background: #fff;
+}
+
+.section-bg-gray {
+  background-color: #f9f9f9;
+}
+
+.section-bg-light {
+  background-color: #e7e7e7e7;
+}
+
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mb-3 { margin-bottom: 3rem; }
+.mt-2 { margin-top: 2rem; }
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+.section-title {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+  white-space: normal;
+  overflow: visible;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.important-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ============================================
+   HEADER COMPONENT
+   ============================================ */
 header {
   display: flex;
   justify-content: space-between;
@@ -103,6 +211,8 @@ header {
   z-index: 1;
   min-height: 100px;
 }
+
+
 header::before {
   content: "";
   position: absolute;
@@ -112,25 +222,52 @@ header::before {
   z-index: 0;
   pointer-events: none;
 }
-.logo { display: flex; align-items: center; z-index: 1; }
-.logo img { width: 40px; height: 40px; margin-right: 0.5rem; }
-.social-icons a {
-  margin-left: 0.5rem;
+
+.logo {
+  display: flex;
+  align-items: center;
   z-index: 1;
-  opacity: 1 !important;   /* fuerza opacidad total */
-  filter: none !important; /* elimina posibles filtros que atenúen */
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.5rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.social-icons a {
+  z-index: 1;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
 }
 
 header h1 {
-  position: relative;   /* asegura que quede por encima del fondo */
-  z-index: 2;           /* más alto que el ::before */
-  color: #000;          /* negro sólido (puedes cambiar a blanco #fff si prefieres) */
-  font-size: 2rem;      /* aumenta el tamaño (ajústalo a tu gusto, por ejemplo 2.5rem o 3rem) */
-  font-weight: bold;    /* más marcado */
-  opacity: 1;           /* asegura opacidad total */
+  position: relative;
+  z-index: 2;
+  color: #000;
+  font-size: 2rem;
+  font-weight: bold;
+  opacity: 1;
 }
 
-nav { background: #333; color: #fff; }
+/* ============================================
+   NAVIGATION COMPONENT
+   ============================================ */
+nav {
+  background: #333;
+  color: #fff;
+}
+
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -140,17 +277,24 @@ nav { background: #333; color: #fff; }
   padding: 0.5rem;
   position: relative;
 }
-.nav-links { display: flex; }
+
+.nav-links {
+  display: flex;
+}
+
 .nav-links a {
   margin: 0 0.5rem;
   color: #fff;
   transition: background 0.2s, color 0.2s;
 }
-.nav-links a:hover, .nav-links a:focus {
+
+.nav-links a:hover,
+.nav-links a:focus {
   background: #fff;
   color: #333;
   border-radius: 4px;
 }
+
 .burger {
   display: none;
   cursor: pointer;
@@ -159,177 +303,245 @@ nav { background: #333; color: #fff; }
   top: 50%;
   transform: translateY(-50%);
 }
-.burger div { width: 25px; height: 3px; background: #fff; margin: 5px; }
 
-@media (max-width: 768px) {
-  .nav-container {
-  justify-content: center;
-  padding: 1rem;
-  }
-  .nav-links {
-  display: none;
-  flex-direction: column;
-  background: #333;
-  width: 100%;
-  align-items: center; /* centra os textos */
-  position: absolute;
-  left: 0;
-  top: 100%;
-  z-index: 10;
-  }
-  .nav-links a {
-  padding: 0.5rem;
-  border-top: 1px solid #444;
-  width: 100%;
-  text-align: center;
-  }
-  .nav-links a:hover, .nav-links a:focus {
+.burger div {
+  width: 25px;
+  height: 3px;
   background: #fff;
-  color: #333;
-  }
-  .burger {
-  /* Aumenta o espacio do burger, e o espacio clicable */
-  display: block;
-  left: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  }
+  margin: 5px;
 }
 
-/* Header icons */
-.social-icons img { width: 24px; height: 24px; }
-
+/* ============================================
+   HERO COMPONENT
+   ============================================ */
 .hero {
-position: relative;
-width: 100%;
-height: 60vh;
-display: flex;
-align-items: center;
-justify-content: center;
-overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .hero img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .hero .overlay {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0,0,0,0.4); /* Oscurece a imaxe de fondo */
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-color: #fff;
-text-align: center;
-padding: 2rem;
-box-sizing: border-box;
-}
-
-.hero h2 {
-font-size: 2.5rem;
-margin-bottom: 1rem;
-text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-word-break: break-word;
-}
-
-.hero p {
-font-size: 1.2rem;
-text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
-}
-/* Responsividad para iframes */
-.embed-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 ratio */
-  height: 0;
-  overflow: hidden;
-  margin-bottom: 1rem;
-}
-.embed-container iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
-section { padding: 2rem 1rem; max-width: 1200px; margin: 0 auto; }
-.section-title { margin-bottom: 1rem; font-size: 3rem; }
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  word-break: break-word;
+}
 
-/* Sobre o Festival */
+.hero p {
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+}
+
+/* ============================================
+   SECTIONS BASE
+   ============================================ */
+section {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ============================================
+   INFO IMPORTANTE COMPONENT
+   ============================================ */
+.info-importante {
+  background: #fff;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.info-importante__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: fit-content;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.info-importante__item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  height: 500px;
+  width: auto;
+}
+
+.info-importante__item:hover {
+  transform: translateY(-8px);
+}
+
+.info-importante__img {
+  height: 100%;
+  width: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.info-importante__download {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.info-importante__download:hover {
+  background: rgba(255,255,255,1);
+  transform: scale(1.1);
+}
+
+.info-importante__download svg {
+  width: 24px;
+  height: 24px;
+  fill: #333;
+}
+
+.info-importante__text {
+  max-width: 900px;
+  margin: 2.5rem auto 0;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  text-align: left;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #333;
+  border-left: 4px solid #007bff;
+}
+
+.info-importante__text p {
+  margin-bottom: 1.2rem;
+}
+
+.info-importante__warning {
+  padding: 1rem;
+  background: #fff3cd;
+  border-radius: 8px;
+  border-left: 3px solid #ffc107;
+  margin-bottom: 1.2rem;
+}
+
+.info-importante__link {
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ============================================
+   ABOUT SECTION COMPONENT
+   ============================================ */
 .about-section {
-padding: 3rem 1rem;
-background: #fff;
+  padding: 3rem 1rem;
+  background: #fff;
 }
 
 .about-content {
-display: flex;
-align-items: flex-start;
-justify-content: center;
-gap: 2rem;
-max-width: 1100px;
-margin: 0 auto;
-flex-wrap: wrap;
-}
-
-.about-images {
-flex: 1 1 350px;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-height: 100%;
-min-height: 100%;
-}
-
-.about-images img {
-width: 100%;
-height: calc((100% - 2rem) / 3);
-min-height: 150px;
-object-fit: cover;
-border-radius: 8px;
-transition: transform 0.3s ease;
-margin-bottom: 1rem;
-}
-
-.about-images img:hover {
-transform: scale(1.02);
-}
-
-.section-title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: clamp(1.5rem, 5vw, 3rem);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .about-text {
-flex: 1 1 350px;
-text-align: justify;
+  flex: 1 1 350px;
+  text-align: justify;
+}
+
+.about-text h3 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.about-images {
+  flex: 1 1 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 100%;
+}
+
+.about-images img {
+  width: 100%;
+  height: calc((100% - 2rem) / 3);
+  min-height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.about-images img:hover {
+  transform: scale(1.02);
 }
 
 .about-image {
-flex: 1 1 350px;
-display: flex;
-justify-content: center;
+  flex: 1 1 350px;
+  display: flex;
+  justify-content: center;
 }
 
 .about-image img {
-max-width: 100%;
-height: auto;
-border-radius: 12px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
 
-/* Lista de características */
+/* ============================================
+   FEATURES LIST COMPONENT
+   ============================================ */
 .features-list {
   list-style: none;
   padding: 0;
@@ -368,7 +580,30 @@ border-radius: 12px;
   top: -0.2rem;
 }
 
-/* Servicios */
+/* ============================================
+   EMBED CONTAINER (Videos/Maps)
+   ============================================ */
+.embed-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.embed-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ============================================
+   SERVICES SECTION
+   ============================================ */
 .services-section {
   background-color: #f9f9f9;
   padding: 4rem 1rem;
@@ -429,19 +664,12 @@ border-radius: 12px;
   line-height: 1.4;
 }
 
-/* Programación */
-.program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
-
+/* ============================================
+   CONCERTS SECTION
+   ============================================ */
 #concerts {
   padding: 2rem 1rem;
   background-color: #e7e7e7e7;
-}
-
-#concerts .section-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  position: relative;
 }
 
 #concerts .section-title::after {
@@ -502,93 +730,198 @@ border-radius: 12px;
   width: 100%;
 }
 
-
-/* Concurso */
-#concurso {
+/* ============================================
+   CARTEL SECTION
+   ============================================ */
+.cartel-content {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+  align-items: stretch;
   gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.cartel-text {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #f9f9f9;
   padding: 2rem;
   border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-#concurso h2 {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.concurso-texto {
-  flex: 1 1 300px;
-  min-width: 250px;
-}
-
-.concurso-texto h3 {
-  margin-bottom: 1rem;
-}
-
-.concurso-texto p {
-  font-size: 1.1rem;
+.cartel-text h3 {
   color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.cartel-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.cartel-winner {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.cartel-winner h4 {
+  color: #444;
   margin-bottom: 1rem;
 }
 
-.concurso-texto a {
-  display: inline-block;
-  padding: 0.7rem 1.5rem;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
+.cartel-winner p {
+  font-size: 1.2rem;
+  color: #333;
 }
 
-.concurso-imagen {
-  flex: 1 1 80px; /* anchura */
-  background-color: #444;
-  border-radius: 8px;
-  padding: 0.5rem;
+.cartel-winner p:last-child {
+  margin-top: 1rem;
+}
+
+.cartel-footer {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 2rem;
+}
+
+.cartel-image {
+  flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 
-.concurso-imagen img {
-  max-height: 250px;
+.cartel-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.cartel-image img:hover {
+  transform: scale(1.02);
+}
+
+/* ============================================
+   PROGRAMA SECTION
+   ============================================ */
+.programa-images {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.programa-images > div {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.programa-images img {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  display: block;
-  object-fit: contain;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Móviles: todo en columna, imagen centrada */
-@media (max-width: 768px) {
-  #concurso {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .concurso-texto,
-  .concurso-imagen {
-    width: 100%;
-  }
-
-  .concurso-imagen {
-    justify-content: center;
-  }
-
-  .concurso-imagen img {
-    max-width: 80%;
-  }
+/* ============================================
+   PACK PASABODEGHAS
+   ============================================ */
+.pack-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.pack-image-wrapper img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  margin: 0;
+}
 
+/* ============================================
+   BUS SECTION
+   ============================================ */
+.bus-content {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
 
-/* Photos */
+.bus-route {
+  flex: 0 1 300px;
+}
+
+.bus-route h3 {
+  margin-bottom: 0.5rem;
+}
+
+.bus-route ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.bus-route li {
+  margin-bottom: 0.3rem;
+}
+
+/* ============================================
+   PUNTOS DE COMPRA
+   ============================================ */
+.puntos-content {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.puntos-column {
+  flex: 0 1 300px;
+}
+
+.puntos-group {
+  margin-bottom: 2rem;
+}
+
+.puntos-group:last-child {
+  margin-bottom: 0;
+}
+
+.puntos-group h3 {
+  margin-bottom: 0.5rem;
+}
+
+.puntos-group ul {
+  list-style: none;
+  padding-left: 0;
+  white-space: nowrap;
+}
+
+.puntos-group ul li {
+  text-align: left;
+  margin-bottom: 0.3rem;
+}
+
+.puntos-note {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ============================================
+   CARRUSEL (PHOTOS)
+   ============================================ */
 .carrusel-container {
   position: relative;
   display: flex;
@@ -606,25 +939,28 @@ border-radius: 12px;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
 .carrusel::-webkit-scrollbar {
   display: none;
 }
 
 .carrusel img {
   flex: 0 0 auto;
-  height: 300px; /* Alto fijo */
+  height: 300px;
   max-width: 100%;
-  object-fit: cover; /* Opción: "contain" para ver todo inda que  haxa marxes */
+  object-fit: cover;
   border-radius: 12px;
   scroll-snap-align: center;
-  background-color: #f0f0f0; /* Fondo neutro para fotos pequechas */
+  background-color: #f0f0f0;
   transition: transform 0.3s ease;
 }
+
 .carrusel img:hover {
   transform: scale(1.05);
 }
 
-.btn-left, .btn-right {
+.btn-left,
+.btn-right {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -638,7 +974,9 @@ border-radius: 12px;
   border-radius: 8px;
   transition: background-color 0.3s;
 }
-.btn-left:hover, .btn-right:hover {
+
+.btn-left:hover,
+.btn-right:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -650,17 +988,13 @@ border-radius: 12px;
   right: 10px;
 }
 
-/* Preguntas Frecuentes */
+/* ============================================
+   FAQ SECTION
+   ============================================ */
 #faq {
   padding: 3rem 1rem;
   max-width: 800px;
   margin: auto;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
 }
 
 .faq-container {
@@ -706,24 +1040,49 @@ border-radius: 12px;
   padding: 1rem;
 }
 
-/* Footer base */
+/* ============================================
+   DAVILA SECTION
+   ============================================ */
+.davila-section {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.davila-section__image {
+  margin-bottom: 3rem;
+}
+
+.davila-section__text {
+  font-size: 1.2rem;
+}
+
+.davila-section__highlight {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  color: #333;
+}
+
+/* ============================================
+   FOOTER COMPONENT
+   ============================================ */
 footer {
   background-color: #888;
   padding: 20px 40px;
   font-family: sans-serif;
 }
 
-/* Contenedor principal de logos */
 .footer-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 5rem; /* Separacion entre grupo de logos (organizan/colaboran) */
+  gap: 5rem;
   flex-wrap: wrap;
   text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Grupo individual: Organizan / Colaboran */
 .footer-group {
   display: flex;
   flex-direction: column;
@@ -731,7 +1090,14 @@ footer {
   margin-bottom: 20px;
 }
 
-/* Título de cada grupo */
+.footer-group--inline {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
 .footer-title {
   font-weight: bold;
   font-size: 1rem;
@@ -739,7 +1105,12 @@ footer {
   color: #fff;
 }
 
-/* Contenedor de logos */
+.footer-title--inline {
+  font-size: 1.2rem;
+  margin: 0;
+  min-width: 120px;
+}
+
 .footer-logos {
   display: flex;
   flex-wrap: wrap;
@@ -747,13 +1118,24 @@ footer {
   gap: 10px;
 }
 
-/* Logos individuales */
-.footer-logos img.logo-extra {
+.footer-logos--inline {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-logos img {
   height: 40px;
   object-fit: contain;
 }
 
-/* Línea inferior do footer */
+.footer-logos--inline img {
+  height: 80px;
+  width: auto;
+}
+
 .footer-copy {
   text-align: center;
   margin-top: 1rem;
@@ -761,42 +1143,40 @@ footer {
   color: #ddd;
 }
 
-/* Responsive: móviles */
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
 @media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px; /* Menos separación entre grupos en móviles */
-  }
-
-  .footer-group {
-    width: 100%;
-  }
-
-  .footer-logos {
+  /* Navigation */
+  .nav-container {
     justify-content: center;
-  }
-}
-
-
-/* Responsive nav */
-@media (max-width: 768px) {
-  .nav-links { display: none; flex-direction: column; background: #333; width: 100%; }
-  .nav-links a { padding: 0.5rem; border-top: 1px solid #444; }
-  .burger { display: block; }
-
-  /* Ajustes para móvil */
-  .about-content {
-    margin: 0 !important;
-    padding: 1rem !important;
+    padding: 1rem;
   }
 
-  .about-text, .about-images {
-    flex: 1 1 100% !important;
-    min-width: 100% !important;
-    padding: 1rem !important;
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    width: 100%;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 10;
   }
 
+  .nav-links a {
+    padding: 0.5rem;
+    border-top: 1px solid #444;
+    width: 100%;
+    text-align: center;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  /* Hero */
   .hero h2 {
     font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
     padding: 0 1rem;
@@ -805,6 +1185,7 @@ footer {
     max-width: 100%;
   }
 
+  /* Section title */
   .section-title {
     font-size: clamp(1.5rem, 6vw, 2rem) !important;
     padding: 0 1rem;
@@ -812,21 +1193,39 @@ footer {
     hyphens: auto;
   }
 
-  /* Asegurar que no haya desbordamiento horizontal */
-  body {
-    overflow-x: hidden;
-    width: 100%;
+  /* About content */
+  .about-content {
+    margin: 0 !important;
+    padding: 1rem !important;
   }
 
-  main {
-    width: 100%;
-    overflow-x: hidden;
+  .about-text,
+  .about-images {
+    flex: 1 1 100% !important;
+    min-width: 100% !important;
+    padding: 1rem !important;
   }
 
+  /* Sections */
   section {
     width: 100%;
     padding: 1rem !important;
     margin: 0 !important;
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-group {
+    width: 100%;
+  }
+
+  .footer-logos {
+    justify-content: center;
   }
 }
 </style>
@@ -870,61 +1269,59 @@ footer {
   </nav>
 
   <!-- Información Importante -->
-  <section style="background: #fff; padding: 3rem 1rem; text-align: center;">
-    <h2 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: #333; margin-bottom: 2.5rem; text-transform: uppercase; letter-spacing: 2px;">INFORMACIÓN IMPORTANTE</h2>
+  <section class="info-importante">
+    <h2 class="important-title">INFORMACIÓN IMPORTANTE</h2>
 
-    <div style="display: flex; flex-wrap: wrap; gap: 2rem; max-width: fit-content; margin: 0 auto; justify-content: center; align-items: flex-start;">
-
+    <div class="info-importante__grid">
       <!-- Mapa Pasabodeghas -->
-      <div style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: transform 0.3s ease; height: 500px; width: auto;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-        <img src="MapaPasabodeghas.webp" alt="Mapa Pasabodeghas" style="height: 100%; width: auto; display: block; object-fit: cover;">
-        <a href="MapaPasabodeghas.webp" download="MapaPasabodeghas.webp" style="position: absolute; top: 1rem; right: 1rem; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: rgba(255,255,255,0.9); border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.2); cursor: pointer; text-decoration: none; transition: all 0.3s ease; backdrop-filter: blur(4px);" onmouseover="this.style.background='rgba(255,255,255,1)'; this.style.transform='scale(1.1)'" onmouseout="this.style.background='rgba(255,255,255,0.9)'; this.style.transform='scale(1)'">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #333;">
+      <div class="info-importante__item">
+        <img src="MapaPasabodeghas.webp" alt="Mapa Pasabodeghas" class="info-importante__img">
+        <a href="MapaPasabodeghas.webp" download="MapaPasabodeghas.webp" class="info-importante__download" aria-label="Descargar mapa">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
           </svg>
         </a>
       </div>
 
       <!-- Programa Pasabodeghas -->
-      <div style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: transform 0.3s ease; height: 500px; width: auto;" onmouseover="this.style.transform='translateY(-8px)'" onmouseout="this.style.transform='translateY(0)'">
-        <img src="ProgramaPasabodeghas.webp" alt="Programa Pasabodeghas" style="height: 100%; width: auto; display: block; object-fit: cover;">
-        <a href="ProgramaPasabodeghas.webp" download="ProgramaPasabodeghas.webp" style="position: absolute; top: 1rem; right: 1rem; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: rgba(255,255,255,0.9); border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.2); cursor: pointer; text-decoration: none; transition: all 0.3s ease; backdrop-filter: blur(4px);" onmouseover="this.style.background='rgba(255,255,255,1)'; this.style.transform='scale(1.1)'" onmouseout="this.style.background='rgba(255,255,255,0.9)'; this.style.transform='scale(1)'">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: #333;">
+      <div class="info-importante__item">
+        <img src="ProgramaPasabodeghas.webp" alt="Programa Pasabodeghas" class="info-importante__img">
+        <a href="ProgramaPasabodeghas.webp" download="ProgramaPasabodeghas.webp" class="info-importante__download" aria-label="Descargar programa">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
           </svg>
         </a>
       </div>
-
     </div>
 
     <!-- Texto informativo -->
-    <div style="max-width: 900px; margin: 2.5rem auto 0; padding: 2rem; background: #f8f9fa; border-radius: 12px; text-align: left; line-height: 1.8; font-size: 1rem; color: #333; border-left: 4px solid #007bff;">
-      <p style="margin-bottom: 1.2rem;">
+    <div class="info-importante__text">
+      <p>
         📣📢📢 Non queda nada para a mellor ruta ghaiteira... o PASABODEGHAS! Aquí tedes as actividades, mostras, xogos populares, espectáculos infantiles, tapas e horarios de toda a ruta.
       </p>
 
-      <p style="margin-bottom: 1.2rem;">
+      <p>
         A maiores da adega de Claudino, Pepe da Pedreira, Carmela, Gonzalez, Bouzón, Pegito, Casimiro, Fondal e Picanes este ano súmase a Adega vella de Pereiras.🌰🌰
       </p>
 
-      <p style="margin-bottom: 1.2rem; padding: 1rem; background: #fff3cd; border-radius: 8px; border-left: 3px solid #ffc107;">
+      <p class="info-importante__warning">
         ⛔ Recordamos que ESE DÍA NON SE VENDERÁN PACKS. Só se venderán os packs infantiles para menores de 12 anos. ⛔ (Que terán que ir acompañados dun adulto)<br>
-        Tedes un <a href="AutorizacionMenores.pdf" target="_blank" style="color: #007bff; font-weight: 600; text-decoration: underline;">modelo de autorización de entrada</a> para os menores que teñan máis de 12 anos e non vaian acompañados, que terán que levar cuberto e firmado.
+        Tedes un <a href="AutorizacionMenores.pdf" target="_blank" class="info-importante__link">modelo de autorización de entrada</a> para os menores que teñan máis de 12 anos e non vaian acompañados, que terán que levar cuberto e firmado.
       </p>
     </div>
   </section>
 
   <!-- Hero EspazoActivo-->
-    <div class="hero" role="banner">
-      <img src="images/espazoactivo/HeaderEspazoActivo.webp"
-           alt="Festival Pasabodeghas en Sarandón"
-           width="1920"
-           height="1080"
-           fetchpriority="high">
-      <div class="overlay">
-        <h2 style="font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; letter-spacing: 2px; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">ESPAZO ACTIVO DA ULLA</h2>
-      </div>
-    </div>  <!-- Sobre EspazoAcrivo-->
+  <div class="hero" role="banner">
+    <img src="images/espazoactivo/HeaderEspazoActivo.webp"
+         alt="Festival Pasabodeghas en Sarandón"
+         width="1920"
+         height="1080"
+         fetchpriority="high">
+    <div class="overlay">
+      <h2 class="hero-title">ESPAZO ACTIVO DA ULLA</h2>
+    </div>
+  </div>  <!-- Sobre EspazoAcrivo-->
   <section id="espazoactivo" class="about-section">
     <div class="about-content">
         <div class="about-text">
@@ -959,7 +1356,7 @@ Ao longo da súa vida esta iniciativa sufriu unha evolución, dando lugar a dife
   <div class="hero">
     <img src="images/pasabodeghas/FondoTituloSeccionPasabodeghas.webp" alt="Pasabodeghas Festival">
     <div class="overlay">
-      <h2 style="font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; letter-spacing: 2px; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">PASABODEGHAS</h2>
+      <h2 class="hero-title">PASABODEGHAS</h2>
     </div>
   </div>
 
@@ -1043,31 +1440,27 @@ En definitiva, o "Pasabodeghas" busca que as persoas que asistan, descubran o se
   <!-- Sección Cartel Xeral -->
   <section id="cartel" class="about-section">
     <h2 class="section-title">Cartel do Festival</h2>
-    <div class="about-content" style="align-items: stretch; gap: 2rem; flex-wrap: wrap;">
-      <div class="about-text" style="flex: 1 1 300px; display: flex; flex-direction: column; justify-content: space-between; background-color: #f9f9f9; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <div class="cartel-content">
+      <div class="cartel-text">
         <div>
-          <h3 style="color: #333; margin-bottom: 1.5rem; font-size: 1.5rem;">Concurso de Carteis 2025</h3>
-          <p style="font-size: 1.1rem; line-height: 1.6;">
+          <h3>Concurso de Carteis 2025</h3>
+          <p>
             Este ano celebramos un concurso de carteis para a elección do deseño do 2025 no cal participaron <strong>10 traballos</strong>.
           </p>
-          <div style="margin: 2rem 0; padding: 1.5rem; background-color: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-            <h4 style="color: #444; margin-bottom: 1rem;">Gañadora do Concurso</h4>
-            <p style="font-size: 1.2rem; color: #333;"><strong>Patricia Riveira Laceiras</strong></p>
-            <p style="margin-top: 1rem;">
+          <div class="cartel-winner">
+            <h4>Gañadora do Concurso</h4>
+            <p><strong>Patricia Riveira Laceiras</strong></p>
+            <p>
               Un cartel que mostra o espirito do Pasabodeghas, e tamén das letras galegas que este ano foron adicadas á poesía popular oral, personificada nas cantareiras e pandeireteiras.
             </p>
           </div>
-          <p style="font-size: 1.1rem; color: #666; margin-top: 2rem;">
+          <p class="cartel-footer">
             Grazas a todas e todos por participar e por poñerlle tantas gañas e creatividade. Da gusto ver tanto talento!
           </p>
         </div>
       </div>
-      <div class="about-images" style="flex: 1; display: flex; justify-content: center; align-items: center; padding: 2rem;">
-        <img src="images/pasabodeghas_xeral_50x70.webp"
-             alt="Cartel Xeral do Pasabodeghas"
-             style="width: 100%; max-width: 400px; height: auto; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: transform 0.3s ease;"
-             onmouseover="this.style.transform='scale(1.02)'"
-             onmouseout="this.style.transform='scale(1)'">
+      <div class="cartel-image">
+        <img src="images/pasabodeghas_xeral_50x70.webp" alt="Cartel Xeral do Pasabodeghas">
       </div>
     </div>
   </section>
@@ -1252,27 +1645,27 @@ Os menores de 18 anos non poderán consumir bebidas alcohólicas.
 De forma opcional poden adquirir o “<strong>Pack Infantil</strong>”: Inclúe: un xerro infantil, lambetadas, degustación de refrescos…e moito máis.
             </p>
         </div>
-                <div class="about-images" style="display: flex; justify-content: center; align-items: center;">
-            <img src="images/PackPasabodeghas.jpg" alt="Cartel Xeral do Pasabodeghas" style="width: 100%; height: auto; max-height: none; margin: 0;">
+        <div class="pack-image-wrapper">
+          <img src="images/PackPasabodeghas.jpg" alt="Cartel Xeral do Pasabodeghas">
         </div>
     </div>
   </section>
 
 
-    <!-- Sección Bus Pasabodeghas -->
+  <!-- Sección Bus Pasabodeghas -->
   <section id="bus" class="about-section">
     <h2 class="section-title">Pasabodeghas Bus</h2>
-    <div class="about-content" style="justify-content: space-evenly; gap: 2rem; flex-wrap: wrap;">
-      <div class="about-text" style="flex: 0 1 300px;">
-        <h3 style="margin-bottom: 0.5rem;">BUS DE IDA E VOLTA DENDE SANTIAGO</h3>
-        <ul style="list-style: none; padding-left: 0;">
+    <div class="bus-content">
+      <div class="bus-route">
+        <h3>BUS DE IDA E VOLTA DENDE SANTIAGO</h3>
+        <ul>
           <li><strong>Orixe (ida):</strong> Parada bus Corte Inglés (16:00 h.)</li>
           <li><strong>Orixe (volta):</strong> Casa de Cultura de San Miguel de Sarandón (2:30 h. /hora nova)</li>
         </ul>
       </div>
-      <div class="about-text" style="flex: 0 1 300px;">
-        <h3 style="margin-bottom: 0.5rem;">BUS DE IDA E VOLTA DENDE A ESTRADA</h3>
-        <ul style="list-style: none; padding-left: 0;">
+      <div class="bus-route">
+        <h3>BUS DE IDA E VOLTA DENDE A ESTRADA</h3>
+        <ul>
           <li><strong>Orixe (ida):</strong> Restaurante Río Liñares (16:00 h.), Casa do Concello da Estrada (16:15 h.)</li>
           <li><strong>Orixe (volta):</strong> Casa de Cultura de San Miguel de Sarandón (2:30 h. /hora nova)</li>
         </ul>
@@ -1282,53 +1675,53 @@ De forma opcional poden adquirir o “<strong>Pack Infantil</strong>”: Inclúe
 
   <!-- Sección Sitios de compra -->
   <section id="puntosDeCompra" class="about-section">
-    <h2 class="section-title" style="white-space: normal; overflow: visible; line-height: 1.2;">Podes adquirir o Pack Pasabodeghas e os tickets de bus en:</h2>
-    <p style="text-align: center; margin-bottom: 2rem;">( A partir das 19:00 h. do 3 de outubro)</p>
-    <div class="about-content" style="justify-content: space-evenly; gap: 2rem; flex-wrap: wrap;">
-      <div class="about-text" style="flex: 0 1 300px;">
-        <div style="margin-bottom: 2rem;">
-          <h3 style="margin-bottom: 0.5rem;"><strong>VEDRA</strong></h3>
-          <ul style="list-style: none; padding-left: 0; white-space: nowrap;">
-            <li style="margin-bottom: 0.3rem;">CENTRO COMERCIAL GARCÍA&GARCÍA</li>
-            <li style="margin-bottom: 0.3rem;">CAFÉ BAR DERBY</li>
-            <li style="margin-bottom: 0.3rem;">TABERNA O PATIO DE MÓNICA</li>
+    <h2 class="section-title">Podes adquirir o Pack Pasabodeghas e os tickets de bus en:</h2>
+    <p class="puntos-note">( A partir das 19:00 h. do 3 de outubro)</p>
+    <div class="puntos-content">
+      <div class="puntos-column">
+        <div class="puntos-group">
+          <h3><strong>VEDRA</strong></h3>
+          <ul>
+            <li>CENTRO COMERCIAL GARCÍA&GARCÍA</li>
+            <li>CAFÉ BAR DERBY</li>
+            <li>TABERNA O PATIO DE MÓNICA</li>
             <li>CAFÉ BAR A DORNA</li>
           </ul>
         </div>
-        <div style="margin-bottom: 2rem;">
-          <h3 style="margin-bottom: 0.5rem;"><strong>BOQUEIXÓN</strong></h3>
-          <ul style="list-style: none; padding-left: 0; white-space: nowrap;">
+        <div class="puntos-group">
+          <h3><strong>BOQUEIXÓN</strong></h3>
+          <ul>
             <li>LIBRERÍA LINO</li>
           </ul>
         </div>
-        <div>
-          <h3 style="margin-bottom: 0.5rem;"><strong>TEO</strong></h3>
-          <ul style="list-style: none; padding-left: 0; white-space: nowrap;">
+        <div class="puntos-group">
+          <h3><strong>TEO</strong></h3>
+          <ul>
             <li>CASA PERNAS</li>
           </ul>
         </div>
       </div>
-      <div class="about-text" style="flex: 0 1 300px;">
-        <div style="margin-bottom: 2rem;">
-          <h3 style="margin-bottom: 0.5rem;"><strong>SANTIAGO</strong></h3>
-          <ul style="list-style: none; padding-left: 0;">
-            <li style="margin-bottom: 0.3rem; text-align: left;">NOZZEO + BUS DENDE SANTIAGO</li>
-            <li style="margin-bottom: 0.3rem; text-align: left;">VIÑOTECA VENTOSELA + BUS DENDE SANTIAGO</li>
-            <li style="text-align: left;">VIÑOTECA A TIXOLA + BUS DENDE SANTIAGO</li>
+      <div class="puntos-column">
+        <div class="puntos-group">
+          <h3><strong>SANTIAGO</strong></h3>
+          <ul>
+            <li>NOZZEO + BUS DENDE SANTIAGO</li>
+            <li>VIÑOTECA VENTOSELA + BUS DENDE SANTIAGO</li>
+            <li>VIÑOTECA A TIXOLA + BUS DENDE SANTIAGO</li>
           </ul>
         </div>
-        <div style="margin-bottom: 2rem;">
-          <h3 style="margin-bottom: 0.5rem;"><strong>A ESTRADA</strong></h3>
-          <ul style="list-style: none; padding-left: 0;">
-            <li style="margin-bottom: 0.3rem; text-align: left;">A RIALA + BUS DENDE A ESTRADA</li>
-            <li style="margin-bottom: 0.3rem; text-align: left;">HAMBURGUESERÍA FLORIDA</li>
-            <li style="text-align: left;">RESTAURANTE RÍO LIÑARES + BUS DENDE A ESTRADA</li>
+        <div class="puntos-group">
+          <h3><strong>A ESTRADA</strong></h3>
+          <ul>
+            <li>A RIALA + BUS DENDE A ESTRADA</li>
+            <li>HAMBURGUESERÍA FLORIDA</li>
+            <li>RESTAURANTE RÍO LIÑARES + BUS DENDE A ESTRADA</li>
           </ul>
         </div>
-        <div>
-          <h3 style="margin-bottom: 0.5rem;"><strong>LALÍN</strong></h3>
-          <ul style="list-style: none; padding-left: 0;">
-            <li style="text-align: left;">A TABERNA DO VENTO</li>
+        <div class="puntos-group">
+          <h3><strong>LALÍN</strong></h3>
+          <ul>
+            <li>A TABERNA DO VENTO</li>
           </ul>
         </div>
       </div>
@@ -1401,146 +1794,122 @@ Inclúe xerro de barro, pulseira, degustación de bebidas e tapas, ambiente fest
     </div>
   </section>
 
-  <section id=":davila" style="text-align: center; padding: 4rem 1rem;">
-    <div class="foto" style="margin-bottom: 3rem;">
+  <section id=":davila" class="davila-section">
+    <div class="davila-section__image">
       <img src="images/ViñetaDavila.webp" alt="Davila">
     </div>
-    <p style="font-size: 1.2rem;">
+    <p class="davila-section__text">
       Participando, apoiando, compartindo, colaborando, construíndo, …poderemos dicir…
     </p>
-    <p style="font-size: 2rem; font-weight: bold; margin-top: 2rem; color: #333;">
+    <p class="davila-section__highlight">
       Pasabodeghas…e o millo?...sen apañar!
     </p>
   </section>
-  <!-- Footer -->
-  <footer style="padding: 2rem;">
-    <div class="footer-container" style="max-width: 1200px; margin: 0 auto;">
-        <!-- Organizan -->
-        <div class="footer-group" style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
-          <p class="footer-title" style="font-size: 1.2rem; margin: 0; min-width: 120px;">Organizan:</p>
-          <div class="footer-logos" style="display: flex; gap: 3rem; flex-wrap: wrap; justify-content: center; align-items: center;">
-            <img src="images/logos/SanCampio.png" alt="Logo AC San Campio" style="height: 80px; width: auto;">
-            <img src="images/logos/RequintaDaLaxeira.png" alt="Logo Requinta da Laxeira" style="height: 80px; width: auto;">
-          </div>
-        </div>
 
-        <!-- Colaboran -->
-        <div class="footer-group" style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
-          <p class="footer-title" style="font-size: 1.2rem; margin: 0; min-width: 120px;">Colaboran:</p>
-          <div class="footer-logos" style="display: flex; gap: 3rem; flex-wrap: wrap; justify-content: center; align-items: center;">
-            <img src="images/logos/ConcelloDeVedra.png" alt="Logo Concello de Vedra" style="height: 80px; width: auto;">
-            <img src="images/logos/DeputacionDaCoruña.png" alt="Logo Deputación da Coruña" style="height: 80px; width: auto;">
-            <img src="images/logos/XuntaDeGalicia.png" alt="Logo Xunta de Galicia" style="height: 80px; width: auto;">
-          </div>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <!-- Organizan -->
+      <div class="footer-group footer-group--inline">
+        <p class="footer-title footer-title--inline">Organizan:</p>
+        <div class="footer-logos footer-logos--inline">
+          <img src="images/logos/SanCampio.png" alt="Logo AC San Campio">
+          <img src="images/logos/RequintaDaLaxeira.png" alt="Logo Requinta da Laxeira">
         </div>
+      </div>
+
+      <!-- Colaboran -->
+      <div class="footer-group footer-group--inline">
+        <p class="footer-title footer-title--inline">Colaboran:</p>
+        <div class="footer-logos footer-logos--inline">
+          <img src="images/logos/ConcelloDeVedra.png" alt="Logo Concello de Vedra">
+          <img src="images/logos/DeputacionDaCoruña.png" alt="Logo Deputación da Coruña">
+          <img src="images/logos/XuntaDeGalicia.png" alt="Logo Xunta de Galicia">
+        </div>
+      </div>
     </div>
 
-    <p class="footer-copy" style="text-align: center; margin-top: 2rem;">&copy; 2025 Pasabodeghas | Dev by AsierCL.</p>
+    <p class="footer-copy">&copy; 2025 Pasabodeghas | Dev by AsierCL.</p>
   </footer>
 </main>
 
 
-  <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
-  <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
-  <!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+<!-- ============================================
+     JAVASCRIPT
+     ============================================ -->
 
-  <!-- Script burger -->
-  <script>
-    function toggleNav() {
-      const links = document.getElementById('navLinks');
-      links.style.display = (links.style.display === 'flex') ? 'none' : 'flex';
-    }
-  </script>
+<!-- Navigation Toggle -->
+<script>
+  function toggleNav() {
+    const links = document.getElementById('navLinks');
+    links.style.display = (links.style.display === 'flex') ? 'none' : 'flex';
+  }
+</script>
 
-  <!-- Script carrusel -->
-  <script>
+<!-- Carrusel -->
+<script>
+  (function() {
     const carrusel = document.getElementById('carrusel');
     const btnLeft = document.querySelector('.btn-left');
     const btnRight = document.querySelector('.btn-right');
+    const scrollAmount = 400;
 
-    const scrollAmount = 400; // píxeles a mover cada vez
-
-    btnLeft.addEventListener('click', () => {
-      carrusel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    });
-
-    btnRight.addEventListener('click', () => {
-      carrusel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    });
-  </script>
-
-  <!-- Audio de grupos -->
-  <script>
-  // Detectamos todas as tarxetas
-  const cards = document.querySelectorAll('.concert-card');
-  // Asociar o audio e o evento de click a cada tarxeta
-  cards.forEach(card => {
-    const audio = card.querySelector('audio');
-    // Evitar que se duplique o evento de click
-    card.addEventListener('click', e => {
-      if (e.target.closest('audio')) return;
-      // Si está sonando outro audio, pausalo
-      if (audio.paused) {
-        audio.play();
-      } else {
-        audio.pause();
-      }
-    });
-  });
-
-  const audios = document.querySelectorAll('.concert-card audio');
-  audios.forEach(a => {
-    a.addEventListener('play', () => {
-      audios.forEach(other => {
-        if (other !== a) other.pause();
+    if (carrusel && btnLeft && btnRight) {
+      btnLeft.addEventListener('click', () => {
+        carrusel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
       });
-    });
-  });
-  </script>
 
-  <!-- FAQ Script -->
-  <script>
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.parentElement;
-      item.classList.toggle('active');
-    });
-  });
-  </script>
+      btnRight.addEventListener('click', () => {
+        carrusel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+    }
+  })();
+</script>
 
-  <!-- Script para controlar los audios de los conciertos -->
-  <script>
-    // Detectamos todas las tarjetas de conciertos
+<!-- Concert Cards Audio -->
+<script>
+  (function() {
     const concertCards = document.querySelectorAll('.concert-card');
 
-    // Asociar el audio y el evento de click a cada tarjeta
     concertCards.forEach(card => {
       const audio = card.querySelector('audio');
 
-      // Evitar que se duplique el evento de click
-      card.addEventListener('click', e => {
-        if (e.target.closest('audio')) return;
+      if (audio) {
+        // Click on card to play/pause
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('audio')) return;
 
-        // Si está sonando otro audio, pausarlo
-        if (audio.paused) {
-          // Pausar todos los audios primero
-          document.querySelectorAll('.concert-card audio').forEach(a => a.pause());
-          audio.play();
-        } else {
-          audio.pause();
-        }
-      });
-    });
-
-    // Asegurarse de que solo suene un audio a la vez
-    document.querySelectorAll('.concert-card audio').forEach(audio => {
-      audio.addEventListener('play', () => {
-        document.querySelectorAll('.concert-card audio').forEach(other => {
-          if (other !== audio) other.pause();
+          if (audio.paused) {
+            // Pause all other audios
+            document.querySelectorAll('.concert-card audio').forEach(a => a.pause());
+            audio.play();
+          } else {
+            audio.pause();
+          }
         });
+
+        // Pause other audios when one starts playing
+        audio.addEventListener('play', () => {
+          document.querySelectorAll('.concert-card audio').forEach(other => {
+            if (other !== audio) other.pause();
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+<!-- FAQ Accordion -->
+<script>
+  (function() {
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        item.classList.toggle('active');
       });
     });
-  </script>
+  })();
+</script>
 
   <script type="application/ld+json">
   {
