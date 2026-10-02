@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="gl">
 <head>
   <!-- --------------------------- -->
   <!-- https://github.com/AsierCL/ -->
@@ -34,10 +34,9 @@
   <title>O Pasabodeghas - Festival de Música e Cultura Galega en Sarandón</title>
   <link rel="icon" type="image/png" href="images/logos/logo.webp">
   <link rel="preload" href="images/TopHeader.webp" as="image">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="canonical" href="https://www.pasabodeghas.gal" />
   <!-- Styles -->
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=7">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -82,7 +81,7 @@
           "name": "Lamatumbá"
         }
       ],
-      "image": "images/2026/cartel-xeral-2026.webp"
+      "image": ["https://www.pasabodeghas.gal/images/2026/cartel-xeral-2026.webp"]
     }
   </script>
 </head>
@@ -93,7 +92,7 @@
     <div class="logo">
       <img src="images/logos/logo.webp" alt="Pasabodeghas Logo">
     </div>
-    <h1>Pasabodeghas · San Miguel de Sarandón</h1>
+    <h1>Pasabodeghas <span class="header-sub">· San Miguel de Sarandón</span></h1>
     <div class="social-icons">
       <a href="https://www.facebook.com/espazoactivodaulla" aria-label="Facebook" target="_blank" rel="noopener"><img src="images/logos/facebook.webp" alt="Facebook"></a>
       <a href="https://www.instagram.com/espazoactivo?utm_source=ig_web_button_share_sheet&igsh=MTNlY2tjMmJybzY1OA==" aria-label="Instagram" target="_blank" rel="noopener"><img src="images/logos/instagram.webp" alt="Instagram"></a>
@@ -123,6 +122,8 @@
   <div class="hero" role="banner">
     <img src="images/pasabodeghas/FondoTituloSeccionPasabodeghas.webp"
          alt="Pasabodeghas Festival"
+         width="1024"
+         height="683"
          fetchpriority="high">
     <div class="overlay">
       <h2 class="hero-title">PASABODEGHAS</h2>
@@ -136,6 +137,8 @@
       <img class="banner-2026__poster"
            src="images/2026/cartel-xeral-2026.webp"
            alt="Cartel Xeral do Pasabodeghas 2026"
+           width="1158"
+           height="1600"
            fetchpriority="high">
       <div class="banner-2026__info">
         <p class="banner-2026__tagline">O Pasabodeghas volve a San Miguel de Sarandón!</p>
@@ -173,54 +176,26 @@ En definitiva, o "Pasabodeghas" busca que as persoas que asistan, descubran o se
             </ul>
         </div>
         <div class="about-images">
-            <img src="images/pasabodeghas/Foto1Pasabodeghas.webp" alt="Espazo Activo 1">
-            <img src="images/pasabodeghas/Foto2Pasabodeghas.webp" alt="Espazo Activo 2">
-            <img src="images/pasabodeghas/Foto3Pasabodeghas.webp" alt="Espazo Activo 3">
+            <img src="images/pasabodeghas/Foto1Pasabodeghas.webp" alt="Espazo Activo 1" width="800" height="533" loading="lazy" decoding="async">
+            <img src="images/pasabodeghas/Foto2Pasabodeghas.webp" alt="Espazo Activo 2" width="800" height="533" loading="lazy" decoding="async">
+            <img src="images/pasabodeghas/Foto3Pasabodeghas.webp" alt="Espazo Activo 3" width="800" height="600" loading="lazy" decoding="async">
         </div>
-    <!-- Video YouTube embebido responsive -->
-    <div class="embed-container">
-      <iframe
-        src="https://www.youtube.com/embed/an8Fv0_yRTE?si=P8iS3UUZilTW86mn"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+    <!-- Video YouTube (cárgase ao facer clic) -->
+    <div class="embed-facade" data-video-id="an8Fv0_yRTE" role="button" tabindex="0" aria-label="Reproducir vídeo">
+      <img class="embed-facade__thumb" src="https://i.ytimg.com/vi/an8Fv0_yRTE/hqdefault.jpg" alt="Miniatura do vídeo" width="480" height="360" loading="lazy" decoding="async">
+      <div class="embed-facade__play" aria-hidden="true">▶</div>
     </div>
-    <div class="embed-container">
-      <iframe
-        src="https://www.youtube.com/embed/K_fXUmfgglU?si=K4yHNxX16kvv68gW"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+    <div class="embed-facade" data-video-id="K_fXUmfgglU" role="button" tabindex="0" aria-label="Reproducir vídeo">
+      <img class="embed-facade__thumb" src="https://i.ytimg.com/vi/K_fXUmfgglU/hqdefault.jpg" alt="Miniatura do vídeo" width="480" height="360" loading="lazy" decoding="async">
+      <div class="embed-facade__play" aria-hidden="true">▶</div>
     </div>
-    <div class="embed-container">
-      <iframe
-        src="https://www.youtube.com/embed/XO1NzyRijlE?si=vtmEDYflxpKd66GB"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+    <div class="embed-facade" data-video-id="XO1NzyRijlE" role="button" tabindex="0" aria-label="Reproducir vídeo">
+      <img class="embed-facade__thumb" src="https://i.ytimg.com/vi/XO1NzyRijlE/hqdefault.jpg" alt="Miniatura do vídeo" width="480" height="360" loading="lazy" decoding="async">
+      <div class="embed-facade__play" aria-hidden="true">▶</div>
     </div>
-    <div class="embed-container">
-      <iframe
-        src="https://www.youtube.com/embed/AQTHsG6EAqw?si=a-VZoC9DMxK6NEWx"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+    <div class="embed-facade" data-video-id="AQTHsG6EAqw" role="button" tabindex="0" aria-label="Reproducir vídeo">
+      <img class="embed-facade__thumb" src="https://i.ytimg.com/vi/AQTHsG6EAqw/hqdefault.jpg" alt="Miniatura do vídeo" width="480" height="360" loading="lazy" decoding="async">
+      <div class="embed-facade__play" aria-hidden="true">▶</div>
     </div>
   </section>
 
@@ -234,17 +209,17 @@ En definitiva, o "Pasabodeghas" busca que as persoas que asistan, descubran o se
       <button class="btn-left" aria-label="Foto anterior">&#10094;</button>
 
       <div class="carrusel" id="carrusel">
-        <img src="images/carrusel/Concerto.webp" alt="Concerto">
-        <img src="images/carrusel/Subida2.webp" alt="Subida 2">
-        <img src="images/carrusel/GrafitiPasabodeghas.jpg" alt="Grafiti Pasabodeghas">
-        <img src="images/carrusel/Xente.webp" alt="Xente">
-        <img src="images/carrusel/Filloas.webp" alt="Filloas">
-        <img src="images/carrusel/Tren.webp" alt="Tren">
-        <img src="images/carrusel/Artesan.jpg" alt="Artesan">
-        <img src="images/carrusel/Subida.webp" alt="Subida">
-        <img src="images/carrusel/Xente2.webp" alt="Xente 2">
-        <img src="images/carrusel/Acordeon.webp" alt="Acordeon">
-        <img src="images/carrusel/Panderetas.webp" alt="Panderetas">
+        <img src="images/carrusel/Concerto.webp" alt="Concerto" width="800" height="533" loading="lazy" decoding="async">
+        <img src="images/carrusel/Subida2.webp" alt="Subida 2" width="800" height="533" loading="lazy" decoding="async">
+        <img src="images/carrusel/GrafitiPasabodeghas.webp" alt="Grafiti Pasabodeghas" width="800" height="402" loading="lazy" decoding="async">
+        <img src="images/carrusel/Xente.webp" alt="Xente" width="800" height="533" loading="lazy" decoding="async">
+        <img src="images/carrusel/Filloas.webp" alt="Filloas" width="800" height="533" loading="lazy" decoding="async">
+        <img src="images/carrusel/Tren.webp" alt="Tren" width="800" height="533" loading="lazy" decoding="async">
+        <img src="images/carrusel/Artesan.webp" alt="Artesan" width="800" height="533" loading="lazy" decoding="async">
+        <img src="images/carrusel/Subida.webp" alt="Subida" width="800" height="533" loading="lazy" decoding="async">
+        <img src="images/carrusel/Xente2.webp" alt="Xente 2" width="800" height="533" loading="lazy" decoding="async">
+        <img src="images/carrusel/Acordeon.webp" alt="Acordeon" width="800" height="533" loading="lazy" decoding="async">
+        <img src="images/carrusel/Panderetas.webp" alt="Panderetas" width="800" height="533" loading="lazy" decoding="async">
       </div>
 
       <button class="btn-right" aria-label="Foto seguinte">&#10095;</button>
@@ -254,15 +229,19 @@ En definitiva, o "Pasabodeghas" busca que as persoas que asistan, descubran o se
   <!-- Ubicación -->
   <section id="location">
     <h2 class="section-title">Ubicación</h2>
-    <!-- Mapa embebido responsive -->
-    <div class="embed-container">
-      <iframe src="https://maps.google.com/maps?q=Campo%20da%20festa%20San%20Miguel%20de%20Sarand%C3%B3n&t=m&z=10&output=embed&iwloc=near" loading="lazy" title="Google Maps Location"></iframe>
+    <!-- Mapa (cárgase ao facer clic) -->
+    <div class="map-facade" role="button" tabindex="0" aria-label="Ver mapa">
+      <div class="map-facade__content">
+        <span class="map-facade__icon" aria-hidden="true">📍</span>
+        <p>Campo da festa · San Miguel de Sarandón, Vedra</p>
+        <span class="map-facade__btn">Ver mapa</span>
+      </div>
     </div>
   </section>
 
   <section id=":davila" class="davila-section">
     <div class="davila-section__image">
-      <img src="images/ViñetaDavila.webp" alt="Davila">
+      <img src="images/ViñetaDavila.webp" alt="Davila" width="1280" height="803" loading="lazy" decoding="async">
     </div>
     <p class="davila-section__text">
       Participando, apoiando, compartindo, colaborando, construíndo, …poderemos dicir…
@@ -279,8 +258,8 @@ En definitiva, o "Pasabodeghas" busca que as persoas que asistan, descubran o se
       <div class="footer-group footer-group--inline">
         <p class="footer-title footer-title--inline">Organizan:</p>
         <div class="footer-logos footer-logos--inline">
-          <img src="images/logos/SanCampio.png" alt="Logo AC San Campio">
-          <img src="images/logos/RequintaDaLaxeira.png" alt="Logo Requinta da Laxeira">
+          <img src="images/logos/SanCampio.webp" alt="Logo AC San Campio">
+          <img src="images/logos/RequintaDaLaxeira.webp" alt="Logo Requinta da Laxeira">
         </div>
       </div>
 
@@ -288,9 +267,9 @@ En definitiva, o "Pasabodeghas" busca que as persoas que asistan, descubran o se
       <div class="footer-group footer-group--inline">
         <p class="footer-title footer-title--inline">Colaboran:</p>
         <div class="footer-logos footer-logos--inline">
-          <img src="images/logos/ConcelloDeVedra.png" alt="Logo Concello de Vedra">
-          <img src="images/logos/DeputacionDaCoruña.png" alt="Logo Deputación da Coruña">
-          <img src="images/logos/XuntaDeGalicia.png" alt="Logo Xunta de Galicia">
+          <img src="images/logos/ConcelloDeVedra.webp" alt="Logo Concello de Vedra">
+          <img src="images/logos/DeputacionDaCoruña.webp" alt="Logo Deputación da Coruña">
+          <img src="images/logos/XuntaDeGalicia.webp" alt="Logo Xunta de Galicia">
         </div>
       </div>
     </div>
@@ -332,33 +311,51 @@ En definitiva, o "Pasabodeghas" busca que as persoas que asistan, descubran o se
   })();
 </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Festival",
-    "name": "O Pasabodeghas",
-    "startDate": "2026-10-24",
-    "endDate": "2026-10-25",
-    "location": {
-      "@type": "Place",
-      "name": "Campo da festa San Miguel de Sarandón",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Vedra",
-        "addressRegion": "Galicia",
-        "addressCountry": "ES"
+<!-- Facades: cargar vídeos e mapa ao facer clic -->
+<script>
+  (function() {
+    // Vídeos de YouTube
+    document.querySelectorAll('.embed-facade').forEach(function(facade) {
+      function load() {
+        const id = facade.dataset.videoId;
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+        iframe.title = 'YouTube video player';
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+        facade.innerHTML = '';
+        facade.appendChild(iframe);
       }
-    },
-    "description": "Festival de música, cultura e gastronomía galega.",
-    "image": ["https://www.pasabodeghas.gal/images/2026/cartel-xeral-2026.webp"],
-    "organizer": {
-      "@type": "Organization",
-      "name": "AC San Campio",
-      "url": "https://ejemplo.com"
+      facade.addEventListener('click', load);
+      facade.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          load();
+        }
+      });
+    });
+
+    // Mapa de Google
+    const mapFacade = document.querySelector('.map-facade');
+    if (mapFacade) {
+      function loadMap() {
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://maps.google.com/maps?q=Campo%20da%20festa%20San%20Miguel%20de%20Sarand%C3%B3n&t=m&z=10&output=embed&iwloc=near';
+        iframe.title = 'Google Maps Location';
+        mapFacade.innerHTML = '';
+        mapFacade.appendChild(iframe);
+      }
+      mapFacade.addEventListener('click', loadMap);
+      mapFacade.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          loadMap();
+        }
+      });
     }
-  }
-  </script>
-
-
+  })();
+</script>
 </body>
 </html>

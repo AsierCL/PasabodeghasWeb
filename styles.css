@@ -1000,7 +1000,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 5rem;
+  gap: 3rem;
   flex-wrap: wrap;
   text-align: center;
   max-width: 1200px;
@@ -1044,7 +1044,7 @@ footer {
 
 .footer-logos--inline {
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -1056,8 +1056,10 @@ footer {
 }
 
 .footer-logos--inline img {
-  height: 80px;
+  height: 68px;
   width: auto;
+  max-width: 135px;
+  object-fit: contain;
 }
 
 .footer-copy {
@@ -1394,6 +1396,192 @@ footer {
 @media (max-width: 768px) {
   .banner-2026__info {
     text-align: center;
+  }
+}
+
+/* ============================================
+   EMBED FACADES (vídeos e mapa, click-to-load)
+   ============================================ */
+.embed-facade {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background: #000;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.embed-facade__thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.embed-facade__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+  pointer-events: none;
+}
+
+.embed-facade:hover .embed-facade__play,
+.embed-facade:focus .embed-facade__play {
+  transform: translate(-50%, -50%) scale(1.1);
+  background: #c4302b;
+}
+
+.embed-facade iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.map-facade {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e8f0e8 0%, #d8e4d8 100%);
+  border: 1px dashed #9c9;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+.map-facade:hover,
+.map-facade:focus {
+  background: linear-gradient(135deg, #e0eae0 0%, #cfe0cf 100%);
+}
+
+.map-facade__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem;
+}
+
+.map-facade__icon {
+  font-size: 2.5rem;
+}
+
+.map-facade__content p {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.map-facade__btn {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.6rem 1.5rem;
+  border-radius: 999px;
+}
+
+.map-facade iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  border-radius: 12px;
+  display: block;
+}
+
+/* ============================================
+   RESPONSIVE MÓBIL PEQUENO (<=480px)
+   ============================================ */
+@media (max-width: 480px) {
+  header {
+    padding: 0.6rem;
+    min-height: 72px;
+  }
+
+  .logo img {
+    width: 30px;
+    height: 30px;
+  }
+
+  header h1 {
+    flex: 1;
+    font-size: 1.05rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .header-sub {
+    display: none;
+  }
+
+  .social-icons img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .hero {
+    height: 50vh;
+  }
+
+  .nav-links a {
+    padding: 0.75rem;
+  }
+
+  .carrusel img {
+    height: 220px;
+  }
+
+  .packs-table {
+    min-width: 460px;
+  }
+
+  .packs-table th,
+  .packs-table td {
+    padding: 0.7rem 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-logos--inline img {
+    height: 56px;
+    width: auto;
+    max-width: 110px;
+  }
+
+  .info-importante__item {
+    height: auto;
+    width: 100%;
+  }
+
+  .info-importante__img {
+    width: 100%;
+    height: auto;
+  }
+
+  .map-facade {
+    min-height: 240px;
   }
 }
 
