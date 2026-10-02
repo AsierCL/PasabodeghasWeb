@@ -646,6 +646,17 @@ section {
 /* ============================================
    CARTEL SECTION
    ============================================ */
+/* Título da sección de edición actual (banner da portada) */
+#edicion2026 .section-title::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: #fff200;
+  border-radius: 2px;
+  margin: 0.75rem auto 0;
+}
+
 .cartel-content {
   display: flex;
   align-items: stretch;
@@ -1144,23 +1155,23 @@ footer {
 }
 
 /* ============================================
-   BOTONES EDICION 2025
+   ENLACES A EDICIÓNS
    ============================================ */
-.btn-edicion-2025 {
-  display: inline-block;
-  padding: 1.5rem 3rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  text-decoration: none;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+.archive-links {
   text-align: center;
+  margin-bottom: 2rem;
+  color: #666;
 }
 
-.btn-edicion-2025:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+.archive-links a {
+  color: #333;
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.archive-links a:hover {
+  color: #000;
 }
 
 .btn-volver {
@@ -1177,5 +1188,212 @@ footer {
 .btn-volver:hover {
   background: #555;
   transform: translateX(-5px);
+}
+
+/* ============================================
+   NAV CTA (Edición actual)
+   ============================================ */
+.nav-links a.nav-cta {
+  background: #fff200;
+  color: #000;
+  font-weight: bold;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+}
+
+.nav-links a.nav-cta:hover,
+.nav-links a.nav-cta:focus {
+  background: #e6db00;
+  color: #000;
+}
+
+/* ============================================
+   BANNER EDICIÓN 2026 (portada)
+   ============================================ */
+.banner-2026 {
+  padding: 3rem 1rem;
+  background: #fff;
+  text-align: center;
+}
+
+.banner-2026__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.banner-2026__poster {
+  flex: 0 1 320px;
+  max-width: 340px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.banner-2026__poster:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+}
+
+.banner-2026__info {
+  flex: 1 1 300px;
+  max-width: 480px;
+  text-align: left;
+}
+
+.banner-2026__tagline {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+
+.banner-2026__info p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 0.75rem;
+}
+
+.banner-2026__venta {
+  display: inline-block;
+  background: #fff8cc;
+  border-left: 4px solid #fff200;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background: #fff200;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.15rem;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.cta-button:hover {
+  background: #e6db00;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   CARTEL 2026 (páxina da edición)
+   ============================================ */
+.cartel-2026-main {
+  text-align: center;
+  margin: 1rem auto 0;
+}
+
+.cartel-2026-main img {
+  max-width: 420px;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.carteles-secundarios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 2.5rem auto 0;
+}
+
+.cartel-figura {
+  text-align: center;
+}
+
+.cartel-figura img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease;
+}
+
+.cartel-figura img:hover {
+  transform: translateY(-4px);
+}
+
+/* ============================================
+   PACKS (páxina da edición 2026)
+   ============================================ */
+.packs-venta {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  padding: 1rem 2rem;
+  background: #fff8cc;
+  border: 2px dashed #e6db00;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.packs-table-wrapper {
+  overflow-x: auto;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.packs-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.packs-table th {
+  background: #333;
+  color: #fff;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.packs-table td {
+  padding: 0.9rem 1rem;
+  border-top: 1px solid #eee;
+  color: #333;
+}
+
+.packs-table tbody tr:hover {
+  background: #fffdf0;
+}
+
+.packs-table td:last-child {
+  font-weight: 800;
+  font-size: 1.15rem;
+  white-space: nowrap;
+}
+
+.packs-texto {
+  max-width: 800px;
+  margin: 2.5rem auto 0;
+  text-align: justify;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* ============================================
+   RESPONSIVE (novos compoñentes)
+   ============================================ */
+@media (max-width: 768px) {
+  .banner-2026__info {
+    text-align: center;
+  }
 }
 
