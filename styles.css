@@ -1382,6 +1382,12 @@ footer {
   white-space: nowrap;
 }
 
+.packs-table a {
+  color: #007bff;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 .packs-texto {
   max-width: 800px;
   margin: 2.5rem auto 0;
